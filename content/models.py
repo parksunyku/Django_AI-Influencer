@@ -8,4 +8,4 @@ class Feed(models.Model):
     image = models.TextField()           # 피드 이미지
     profile_image = models.TextField()   # 프로필 이미지
     user_id = models.TextField()         # 글쓴이
-    like_account = models.IntegerField()  # 좋아요 수
+    like_count = models.IntegerField()  # 좋아요 수
