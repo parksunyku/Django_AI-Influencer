@@ -358,7 +358,8 @@
   </div>
 </div>
 
-<div class ="modal_overlay">
+<!-- 첫번째 모달-->
+<div id="first_modal" class ="modal_overlay">
   <div class ="modal_window">
     <div style ="display: flex; flex-direction: row; justify-content: space-between;">
       <div style="width:40px; background : gray" >
@@ -371,12 +372,65 @@
       <span class="material-icons-outlined">close</span>
     </div>
   </div> 
-    <div class ="image_upload_space" style="background: orange; width:778px; height: 540px; margin-top: 10px;">
+    <div class ="image_upload_space" style="border-top : solid 1px gray; width:778px; height: 540px; margin-top: 10px;">
 
     </div>  
 </div>
+ 
+</div>
+
+<!-- 두번째 모달-->
+<div id="second_modal" class ="modal_overlay">
+  <div class ="modal_window">
+    <div style ="display: flex; flex-direction: row; justify-content: space-between;">
+      <div style="width:40px; background : gray" >
+        &nbsp;
+      </div>
+    <div>
+      <b>새 게시물</b>
+    </div>
+    <div style="width:40px; background : gray">
+      <span class="material-icons-outlined">close</span>
+    </div>
+  </div> 
+
+    <div style="border-top: solid 1px gray; display: flex; flex-direction: row; margin-top: 10px;">
+      <div class ="image_upload_space" style="width:500px; height: 540px;">
+
+      </div>
+      <div style = "border: solid 1px gray;">
+          <div>
+            <textarea class="form-control" style="width:276px; height: 400px;"id="exampleFormControlTextarea1" rows="5"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" style="width: 100%">
+            공유하기
+          </button>
+      </div>
+      
+    </div>
+  
+</div>
 
 </div>
+
+<div id="modal_add_feed" class="modal modal_overlay">
+  <div class="modal_window">
+      <div class="modal_title">
+          <div class="modal_title_side"></div>
+          <div> 새 게시물 </div>
+          <div class="modal_title_side">
+              <span id="close_modal" class="close_modal material-icons-outlined" style="font-size: 30px">
+                  close
+              </span>
+          </div>
+      </div>
+      <div class="modal_image_upload">
+          <span style="text-align: center"> 사진을 여기에 끌어다 놓으세요. </span>
+
+      </div>
+  </div>
+</div>
+
 
 
 
@@ -388,8 +442,8 @@
   });
 
   $('#nav_bar_add_box').click(function (){
-    $('.modal_overlay').css({
-      display: 'flex'
+    $('#first_modal').css({
+        display: 'flex'
     });
 
     $(document.body).css({
@@ -428,15 +482,27 @@ function uploadFiles(e){
         var files = e.dataTransfer.files;
 
         if (files.length > 1) {
-            alert('하나만 올려라.');
+            alert('이미지 하나만 올릴 수 있습니다.');
             return;
         }
 
         if (files[0].type.match(/image.*/)) {
-            $(e.target).css({
+
+          $('#first_modal').css({
+            display: 'none'
+          });
+
+          $('#second_modal').css({
+            display: 'flex'
+          });
+
+            $('.image_upload_space').css({
                 "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
                 "outline": "none",
-                "background-size": "100% 100%"});
+                "background-size": "100%",
+                "background-repeat": "no-repeat",
+                "background-position" : "center" 
+              });
         }else{
             alert('이미지가 아닙니다.');
             return;
