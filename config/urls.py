@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import Sub
 from content.views import Main, UploadFeed
-import settings
+from .settings import MEDIA_ROOT, MEDIA_URL
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -26,4 +26,4 @@ urlpatterns = [
     path('content/upload', UploadFeed.as_view())
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
