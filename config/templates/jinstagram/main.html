@@ -423,7 +423,7 @@
           <div class="modal_title_side"></div>
           <div> 새 게시물 </div>
           <div class="modal_title_side">
-              <span id="close_modal" class="close_modal material-icons-outlined" style="font-size: 30px">
+              <span class="close_modal material-icons-outlined" style="font-size: 30px">
                   close
               </span>
           </div>
@@ -442,7 +442,7 @@
           <div class="modal_title_side"></div>
           <div style="margin: 5px"> 새 게시물 </div>
           <div class="modal_title_side">
-              <span id="close_modal" class="close_modal material-icons-outlined" style="font-size: 30px">
+              <span class="close_modal material-icons-outlined" style="font-size: 30px">
                   close
               </span>
           </div>
@@ -478,6 +478,7 @@
   
   // 모달 띄우기 코드
   const modal = document.getElementById("modal_add_feed");
+  const modal2 = document.getElementById("modal_add_feed_content");
   const buttonAddFeed = document.getElementById("add_feed");
   buttonAddFeed.addEventListener("click", e => {
       modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌
@@ -486,13 +487,16 @@
   });
 
   // 모달 닫기 코드
-  const buttonCloseModal = document.getElementById("close_modal");
-  buttonCloseModal.addEventListener("click", e => {
-      modal.style.display = "none";
-      document.body.style.overflowY = "visible";
-  });
-
-
+  const buttonCloseModal = document.getElementsByClassName("close_modal");
+    for(let i = 0; i < buttonCloseModal.length; i++){
+      console.log("this");
+      buttonCloseModal[i].addEventListener("click", e => {
+        console.log("this2");
+        modal.style.display = "none";
+        modal2.style.display = "none";
+        document.body.style.overflowY = "visible";
+    });
+  } 
   
   $('#button_write_feed').on('click', ()=>{
         const image = $('#input_image').css("background-image").replace(/^url\(['"](.+)['"]\)/, '$1');
