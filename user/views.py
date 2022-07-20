@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from requests import Response
 from rest_framework.views import APIView
-from models import User
+from .models import User
+from django.contrib.auth.hashers import make_password
 # Create your views here.
 
 
@@ -15,7 +17,9 @@ class Join(APIView):
         name = request.data.get('name', None)
         password = request.data.get('password', None)
 
-        User.objects.create(email=email, nickname=nickname, name=name, password=)
+        User.objects.create(email=email, nickname=nickname,
+                            name=name, password=make_password(password), profile_image="default_profile.jpg")
+        return Response(status=200)
 
 
 class Login(APIView):
