@@ -254,11 +254,13 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom"
         style="width: 100%;height: 50px;position: fixed;">
         <div class="container">
+            <a class="navbar-brand" href="main">
             <img style="height: 30px; object-fit: contain"
                 src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png">
+            </a>
             <input class="form-control" style="width: 500px" type="search" placeholder="검색 .." aria-label="Search">
             <div style="display: flex">
-                <span class="material-icons" style="padding-right: 10px">home</span>
+                <a href="main" style="color : black";><span class="material-icons" style="padding-right: 10px">home</span></a>
                 <span class="material-icons" style="padding-right: 10px">send</span>
                 <span id="add_feed" class="material-icons-outlined" style="padding-right: 10px">add_box</span>
                 <span class="material-icons-outlined" style="padding-right: 10px">explore</span>
@@ -270,7 +272,7 @@
                         <div class="profile_box" style="width: 30px; height :30px;">
 
                             <img class="profile_img"
-                                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/optimize/90" />
+                                src="{% get_media_prefix %}{{ user.profile_image }}" />
 
 
                         </div>
@@ -295,23 +297,24 @@
     <div style="padding: 20px 60px">
         <div class="profile_box" style="width: 175px; height :175px;">
             <img class="profile_img"
-                src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/optimize/90" />
+                src="{% get_media_prefix %}{{ user.profile_image }}" />
         </div>
     </div>
-    <div>
-        <div style="display : flex; flex-direction: row">
-            <div style="font-size: 26px">
+    <div style="text-align: left;">
+        <div style="display : flex; flex-direction: row; margin: 20px 0px;">
+            <div style="font-size: 26px; margin-right: 40px">
                 {{ user.nickname }}
             </div>
-            <button> 프로필 편집</button>
-            <span class="material-icons-outlined"> settings </span>
+            <button id="button_profile_upload" style="margin-right: 40px;"> 프로필 사진 편집</button>
+            <input type="file" id="input_fileupload" onchange="profile_upload();" style="display: none;"/>
+            <span class="material-icons-outlined">settings</span>
         </div>
         
-        <div>
+        <div style="margin-bottom: 20px">
             게시물  내 게시물 건수 팔로워 111 팔로잉 111
         </div>
         <div>
-            {{user.name }}
+            <b>{{user.name }} </b>
         </div>
     </div>
 </div>
@@ -358,7 +361,7 @@
                         <div class="feed_name">
                             <div class="profile_box">
                                 <img id="input_profile_image" class="profile_img"
-                                    src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/optimize/90" />
+                                    src="{% get_media_prefix %}{{ user.profile_image }}" />
                             </div>
                             <span id="input_user_id" class="feed_name_txt"> User ID </span>
                         </div>
@@ -519,6 +522,99 @@
                 }
             };
 
+            $('#button_profile_upload').click(function (){
+                $('#input_fileupload').click(); 
+            });
+
+        function profile_upload(){
+
+        const file = $('#input_fileupload')[0].files[0];
+            
+        const email = "{{ user.email }}";
+
+
+        let fd = new FormData();
+
+        fd.append('file', file);
+        fd.append('email', email);
+
+        
+        $.ajax({
+            url: "/user/profile/upload",
+            data: fd,
+            method: "POST",
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                console.log("성공");
+            },
+            error: function (request, status, error) {
+                console.log("에러");
+            },
+            complete: function() {
+                console.log("완료");
+                closeModal();
+                location.reload("/content/profile");
+            }
+        })
+    };
+
+  $('.modal_image_upload')
+      .on("dragover", dragOver)
+      .on("dragleave", dragOver)
+      .on("drop", uploadFiles);
+
+  function dragOver(e){
+      e.stopPropagation();
+      e.preventDefault();
+      
+      if (e.type == "dragover") {
+          $(e.target).css({
+              "background-color": "black",
+              "outline-offset": "-20px"
+          });
+      } else {
+          $(e.target).css({
+              "background-color": "white",
+              "outline-offset": "-10px"
+          });
+      }
+  }
+
+  function uploadFiles(e){
+        e.stopPropagation();
+        e.preventDefault();
+        console.log(e.dataTransfer)
+        console.log(e.originalEvent.dataTransfer)
+
+        e.dataTransfer = e.originalEvent.dataTransfer;
+
+        files = e.dataTransfer.files;
+        if (files.length > 1) {
+            alert('하나만 올려라.');
+            return;
+        }
+
+        if (files[0].type.match(/image.*/)) {
+            $('#modal_add_feed_content').css({
+                display : 'flex'
+            });
+            $('.modal_image_upload_content').css({
+                "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
+                "outline": "none",
+                "background-size": "contain",
+                "background-repeat" : "no-repeat",
+                "background-position" : "center"
+            });
+            $('#modal_add_feed').css({
+                display: 'none'
+            })
+        }else{
+            alert('이미지가 아닙니다.');
+            return;
+        }
+    };
+        
         </script>
 
 

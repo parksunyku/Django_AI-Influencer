@@ -7,6 +7,7 @@ import os
 from user.models import User
 from config. settings import MEDIA_ROOT
 from uuid import uuid4
+from config.settings import MEDIA_ROOT
 
 
 class Main(APIView):

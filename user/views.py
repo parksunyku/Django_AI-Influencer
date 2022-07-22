@@ -1,8 +1,15 @@
+import os
+from uuid import uuid4
+from django.contrib.auth.hashers import make_password
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from config.settings import MEDIA_ROOT
+from content.models import Feed
+
 from .models import User
-from django.contrib.auth.hashers import make_password
+
 # Create your views here.
 
 
@@ -18,7 +25,7 @@ class Join(APIView):
         password = request.data.get('password', None)
 
         User.objects.create(password=make_password(
-            password), name=name, email=email, nickname=nickname, profile_image="dddd.jpg")
+            password), name=name, email=email, nickname=nickname, profile_image="default_profile.jpg")
 
         return Response(status=200)
 
@@ -49,3 +56,24 @@ class LogOut(APIView):
     def get(self, request):
         request.session.flush()
         return render(request, "user/login.html")
+
+
+class UploadProfile(APIView):
+    def post(self, request):
+
+        file = request.FILES['file']
+        uuid_name = uuid4().hex
+        save_path = os.path.join(MEDIA_ROOT, uuid_name)
+        with open(save_path, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+
+        profile_image = uuid_name
+        email = request.data.get('email')
+
+        user = User.objects.filter(email=email).first()
+
+        user.profile_image = profile_image
+        user.save()
+
+        return Response(status=200)
