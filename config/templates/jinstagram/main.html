@@ -456,7 +456,7 @@
           <div class="modal_title_side"></div>
           <div> 새 이미지 업로드 </div>
           <div class="modal_title_side">
-              <span class="close_modal material-icons-outlined" style="font-size: 30px">close</span>
+              <span class="modal_close material-icons-outlined" style="font-size: 30px">close</span>
           </div>
       </div>
       <div class="modal_image_upload">
@@ -471,9 +471,9 @@
   <div class="modal_window">
       <div class="modal_title">
           <div class="modal_title_side"></div>
-          <div style="margin: 5px"> 새 게시물 </div>
+          <div style="margin: 5px"> 새 이미지 </div>
           <div class="modal_title_side">
-              <span class="close_modal material-icons-outlined" style="font-size: 30px">close</span>
+              <span class="modal_close material-icons-outlined" style="font-size: 30px">close</span>
           </div>
       </div>
       <div class="modal_image_content">
@@ -489,7 +489,7 @@
                   <textarea id="input_content" class="feed_content_textarea form-control col-sm-5" rows="10" placeholder="설명을 입력하세요..."></textarea>
               </div>
               <div style="width: 100%; text-align: center">
-                  <button id="button_write_feed" type="button" class="btn btn-primary" style="width: 268px"> 공유하기</button>
+                  <button id="feed_create_button" type="button" class="btn btn-primary" style="width: 268px"> 공유하기</button>
               </div>
           </div>
       </div>
@@ -608,7 +608,7 @@
 
     let files;
 
-    $('#button_write_feed').click(function () {
+    $('#add_feed').click(function () {
         $('#first_modal').css({
             display: 'flex'
         });
@@ -624,7 +624,7 @@
 
         let file = files[0];
         let image = files[0].name;
-        let content = $('#input_feed_content').val();
+        let content = $('#input_content').val();
 
         let fd = new FormData();
 
@@ -651,17 +651,6 @@
         });
     });
 
-
-    $('#add_feed').click(function () {
-        $('#first_modal').css({
-            display: 'flex',
-            overflow : 'hidden'
-        });
-
-        $(document.body).css({
-            overflow: 'hidden'
-        });
-      });
 
     $('.modal_image_upload')
         .on("dragover", dragOver)
