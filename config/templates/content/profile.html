@@ -370,34 +370,29 @@
         </div>
 
     <!-- 첫번째 모달-->
-        <div id="modal_add_feed" class="modal modal_overlay">
+        <div id="first_modal" class="modal modal_overlay">
             <div class="modal_window">
                 <div class="modal_title">
                     <div class="modal_title_side"></div>
                     <div> 새 게시물 </div>
                     <div class="modal_title_side">
-                        <span class="close_modal material-icons-outlined" style="font-size: 30px">
-                            close
-                        </span>
+                        <span class="close_modal material-icons-outlined" style="font-size: 30px">close</span>
                     </div>
                 </div>
                 <div class="modal_image_upload">
                     <span style="text-align: center"> 사진을 여기에 끌어다 놓으세요. </span>
-
                 </div>
             </div>
         </div>
 
         <!-- 두번째 모달 -->
-        <div id="modal_add_feed_content" class="modal modal_overlay_content">
+        <div id="second_modal" class="modal modal_overlay_content">
             <div class="modal_window">
                 <div class="modal_title">
                     <div class="modal_title_side"></div>
-                    <div style="margin: 5px"> 새 게시물 </div>
+                    <div style="margin: 5px"> 새 이미지 업로드 </div>
                     <div class="modal_title_side">
-                        <span class="close_modal material-icons-outlined" style="font-size: 30px">
-                            close
-                        </span>
+                        <span class="close_modal material-icons-outlined" style="font-size: 30px">close</span>
                     </div>
                 </div>
                 <div class="modal_image_content">
@@ -467,8 +462,8 @@
             let files;
 
             // 모달 띄우기 코드
-            const modal = document.getElementById("modal_add_feed");
-            const modal2 = document.getElementById("modal_add_feed_content");
+            const modal = document.getElementById("first_modal");
+            const modal2 = document.getElementById("second_modal");
             const buttonAddFeed = document.getElementById("add_feed");
             buttonAddFeed.addEventListener("click", e => {
                 modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌
@@ -583,7 +578,7 @@
                 }
 
                 if (files[0].type.match(/image.*/)) {
-                    $('#modal_add_feed_content').css({
+                    $('#second_modal').css({
                         display: 'flex'
                     });
                     $('.modal_image_upload_content').css({
@@ -593,7 +588,7 @@
                         "background-repeat": "no-repeat",
                         "background-position": "center"
                     });
-                    $('#modal_add_feed').css({
+                    $('#first_modal').css({
                         display: 'none'
                     })
                 } else {
@@ -676,7 +671,7 @@
         }
 
         if (files[0].type.match(/image.*/)) {
-            $('#modal_add_feed_content').css({
+            $('#second_modal').css({
                 display : 'flex'
             });
             $('.modal_image_upload_content').css({
@@ -686,7 +681,7 @@
                 "background-repeat" : "no-repeat",
                 "background-position" : "center"
             });
-            $('#modal_add_feed').css({
+            $('#first_modal').css({
                 display: 'none'
             })
         }else{
