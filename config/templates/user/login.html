@@ -27,25 +27,65 @@
 
       <div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" style="font-size: 14px; height: 24px;" id="input_password" placeholder="name@example.com">
+          <input type="password" class="form-control" style="font-size: 14px; height: 24px;" id="input_password" placeholder="name@example.com"
+                  onkeyup = "enterkey()">
           <label for="input_password" style="font-size: 14px; padding: 4px 10px">비밀번호</label>
           </div>
       </div>
       
-        <button id ="login_button" class="btn btn-primary" style="width: 100%"">로그인</button>
+        <button id ="login_button" class="btn btn-primary" style="width: 100%">로그인</button>
       
       </div>
       <div style = "padding : 20px; border: solid 2px rgba(219, 219, 219, 1); width: 300px; height:70px; margin-top: 30px; background: white;">
         <div> 계정이 없으신가요? <a href="join">가입하기</a></div>
       </div>
-     </div>
-     
-
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
-    <script>
-      $('#login_button').click(function(){
+<script>
+
+      // function enterkey() {
+      //   if (window.event.keyCode == 13){
+      //     loginCheck();
+      //   };
+      // };
+
+      // function loginCheck(){
+
+      //   const email = $('#input_email').val();
+      //   const password = $('#input_password').val();
+      //   const nickname = $('#input_nickname').val();
+      //   const name = $('#input_name').val();
     
+      //   //console.log(email, password, nickname, name);
+    
+      //   $.ajax({
+      //           url: "/user/login",
+      //           data: {
+      //             email : email,
+      //             password : password,
+      //           },
+      //           method: "POST",
+      //           success: function (data) {
+      //               console.log("성공");
+      //               alert("로그인 성공.");
+      //               location.replace('/main');
+      //           },
+      //           error: function (request, status, error) {
+      //               console.log("에러:"+request['name']+"/"+status+"/"+error);
+    
+      //               if(error=="3") alert("이미 사용된 이메일주소입니다. 다른이메일 주소를 입력하세요");
+      //               else alert("닉네임이 사용중입니다");
+      //           },
+      //           complete: function() {
+      //               console.log("완료");
+      //           }
+      //       })
+      // }
+
+
+
+      $('#login_button').click(function(){
     
         const email = $('#input_email').val();
         const password = $('#input_password').val();
@@ -76,7 +116,10 @@
                     console.log("완료");
                 }
             })
+        
+
       });
+    
     
     
     </script>

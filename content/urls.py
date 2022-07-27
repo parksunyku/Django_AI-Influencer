@@ -7,5 +7,5 @@ urlpatterns = [
     path('like', ToggleLike.as_view()),
     path('bookmark', ToggleBookmark.as_view()),
     path('profile', Profile.as_view()),
-    path('main', Main.as_view())
+    path('main', Main.as_view()),
 ]
