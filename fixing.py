@@ -10,6 +10,7 @@ from config.settings import MEDIA_ROOT
 
 class Main(APIView):
     def get(self, request):
+
         email = request.session.get('email', None)
 
         if email is None:
@@ -25,13 +26,13 @@ class Main(APIView):
         feed_list = []
 
         for feed in feed_object_list:
-            feed_user = User.objects.filter(email=feed.email).first()
+            user = User.objects.filter(email=feed.email).first()
             reply_object_list = Reply.objects.filter(feed_id=feed.id)
             reply_list = []
             for reply in reply_object_list:
-                reply_user = User.objects.filter(email=reply.email).first()
+                user = User.objects.filter(email=reply.email).first()
                 reply_list.append(
-                    dict(reply_content=reply.reply_content, nickname=reply_user.nickname))
+                    dict(reply_content=reply.reply_content, nickname=user.nickname))
             like_count = Like.objects.filter(
                 feed_id=feed.id, is_like=True).count()
 
@@ -43,32 +44,14 @@ class Main(APIView):
                                   image=feed.image,
                                   content=feed.content,
                                   like_count=like_count,
-                                  profile_image=feed_user.profile_image,
-                                  nickname=feed_user.nickname,
+                                  profile_image=user.profile_image,
+                                  nickname=user.nickname,
                                   reply_list=reply_list,
                                   is_liked=is_liked,
                                   is_marked=is_marked
                                   ))
 
         return render(request, "jinstagram/main.html", context=dict(feeds=feed_list, user=user))
-
-
-class UploadFeed(APIView):
-    def post(self, request):
-
-        file = request.FILES['file']
-        uuid_name = uuid4().hex
-        save_path = os.path.join(MEDIA_ROOT, uuid_name)
-        with open(save_path, 'wb+') as destination:
-            for chunk in file.chunks():
-                destination.write(chunk)
-
-        image = uuid_name
-        content = request.data.get('content')
-        email = request.session.get('email', None)
-
-        Feed.objects.create(image=image, content=content,
-                            email=email)
 
 
 class Profile(APIView):
@@ -93,6 +76,24 @@ class Profile(APIView):
         bookmark_feed_list = Feed.objects.filter(id__in=bookmark_list)
         return render(request, 'content/profile.html', context=dict(feed_list=feed_list, like_feed_list=like_feed_list,
                                                                     bookmark_feed_list=bookmark_feed_list, user=user))
+
+
+class UploadFeed(APIView):
+    def post(self, request):
+
+        file = request.FILES['file']
+        uuid_name = uuid4().hex
+        save_path = os.path.join(MEDIA_ROOT, uuid_name)
+        with open(save_path, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+
+        image = uuid_name
+        content = request.data.get('content')
+        email = request.session.get('email', None)
+
+        Feed.objects.create(image=image, content=content,
+                            email=email)
 
 
 class UploadReply(APIView):
@@ -156,7 +157,7 @@ class ToggleBookmark(APIView):
         return Response(status=200)
 
 
-class FeedControl(APIView):
+class Feed(APIView):
     def upload(self, request):
         file = request.FILES['file']
         uuid_name = uuid4().hex

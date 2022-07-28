@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -8,7 +9,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
   <!-- Google Icon fonts -->
   <link
@@ -23,708 +24,743 @@
 </head>
 
 <style>
-    .main_body {
-        display: flex;
-        justify-content: center;
-        padding-top: 50px;
-        background-color: #FAFAFA;
-    }
+  .main_body {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: #FAFAFA;
+  }
 
-    .left_body {
-        margin-right: 100px;
-        width: 600px;
-        height: 2000px;
-        display: flex;
-        flex-direction: column;
-    }
+  .left_body {
+    margin-right: 100px;
+    width: 600px;
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
+  }
 
+  .right_body {
+    padding-top: 20px;
+    width: 300px;
+    height: 1000px;
+    left: 72%;
+    position: fixed
+  }
+
+  .feed_box {
+    background-color: white;
+    width: 580px;
+    margin: 10px;
+    min-height: auto;
+    padding-bottom: 10px;
+  }
+
+  .feed_img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .feed_content {
+    padding: 0px 10px;
+  }
+
+  .feed_like {
+    padding: 0px 10px;
+  }
+
+  .feed_reply {
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .feed_txt {
+    font-size: 14px;
+  }
+
+
+  .feed_icon {
+    padding: 5px 5px 0px 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  span {
+    padding-right: 5px;
+  }
+
+  .feed_name {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .feed_name_txt {
+    font-size: 14px;
+    padding: 0px 10px;
+    font-weight: bold;
+  }
+
+  .profile_box {
+    width: 40px;
+    height: 40px;
+    border-radius: 70%;
+    overflow: hidden;
+  }
+
+  .profile_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .name_content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name_content_txt {
+    font-size: 12px;
+    padding: 0px 10px;
+    font-weight: bold;
+    color: lightgray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 190px;
+  }
+
+  .big_profile_box {
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
+    overflow: hidden;
+  }
+
+  .link_txt {
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .recommend_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+  }
+
+  .comment_box {
+    margin: 40px 0 0 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: lightgray;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 1280px) {
     .right_body {
-        padding-top: 20px;
-        width: 300px;
-        height: 1000px;
-        left: 72%;
-        position: fixed
+      display: none;
     }
-
-    .feed_box {
-        background-color: white;
-        width: 580px;
-        margin: 10px;
-        min-height: auto;
-        padding-bottom: 10px;
-    }
-
-    .feed_img {
-        width: 100%;
-        object-fit: contain;
-    }
-
-    .feed_content {
-        padding: 0px 10px;
-    }
-
-    .feed_like {
-        padding: 0px 10px;
-    }
-
-    .feed_reply {
-        padding: 0px 10px;
-        display: flex;
-        flex-direction: column;
-    }
+  }
 
 
-    .feed_txt {
-        font-size: 14px;
-    }
+  .modal {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+  }
 
+  .modal_window {
+    background: white;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 800px;
+    height: 600px;
+    position: relative;
+  }
 
-    .feed_icon {
-        padding: 5px 5px 0px 5px;
-        display: flex;
-        justify-content: space-between;
-    }
+  .modal_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  }
 
-    span {
-        padding-right: 5px;
-    }
+  .modal_title_side {
+    margin: 5px;
+    flex: 0 0 40px;
+    text-align: center;
+  }
 
-    .feed_name {
-        padding: 10px;
-        display: flex;
-        align-items: center;
-    }
+  .modal_image_upload {
+    outline: 2px dashed black;
+    outline-offset: -10px;
+    transition: all .15s ease-in-out;
+    width: 798px;
+    height: 548px;
+    text-align: center;
+    line-height: 548px;
+  }
 
-    .feed_name_txt {
-        font-size: 14px;
-        padding: 0px 10px;
-        font-weight: bold;
-    }
+  .modal_image_upload_content {
+    outline: 2px dashed black;
+    outline-offset: -10px;
+    text-align: center;
+    transition: all .15s ease-in-out;
+    width: 500px;
+    height: 548px;
+  }
 
-    .profile_box {
-        width: 40px;
-        height: 40px;
-        border-radius: 70%;
-        overflow: hidden;
-    }
+  .modal_image_content {
+    display: flex;
+    flex-direction: row;
+  }
 
-    .profile_img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  .modal_content_write {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(0, 0, 0, 0.18);
+    ;
+  }
 
-    .name_content {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .name_content_txt {
-        font-size: 12px;
-        padding: 0px 10px;
-        font-weight: bold;
-        color: lightgray;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 190px;
-    }
-
-    .big_profile_box {
-        width: 60px;
-        height: 60px;
-        border-radius: 70%;
-        overflow: hidden;
-    }
-
-    .link_txt {
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-        text-decoration: none;
-    }
-
-    .recommend_box {
-        display: flex;
-        justify-content: space-between;
-        padding: 5px;
-        font-size: 14px;
-        font-weight: bold;
-        align-items: center;
-    }
-
-    .comment_box {
-        margin: 40px 0 0 5px;
-        font-size: 12px;
-        font-weight: bold;
-        color: lightgray;
-        display: flex;
-        flex-direction: column;
-    }
-
-    @media screen and (max-width: 1280px) {
-        .right_body {
-            display: none;
-        }
-    }
-
-
-    .modal {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(1.5px);
-        -webkit-backdrop-filter: blur(1.5px);
-    }
-
-    .modal_window {
-        background: white;
-        backdrop-filter: blur(13.5px);
-        -webkit-backdrop-filter: blur(13.5px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        width: 800px;
-        height: 600px;
-        position: relative;
-    }
-
-    .modal_title{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-weight: bold;
-        font-size: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-    }
-
-    .modal_title_side{
-        margin: 5px;
-        flex: 0 0 40px;
-        text-align: center;
-    }
-
-    .modal_image_upload{
-        outline: 2px dashed black ;
-        outline-offset:-10px;
-        transition: all .15s ease-in-out;
-        width: 798px;
-        height: 548px;
-        text-align: center;
-        line-height: 548px;
-    }
-
-    .modal_image_upload_content{
-        outline: 2px dashed black ;
-        outline-offset:-10px;
-        text-align: center;
-        transition: all .15s ease-in-out;
-        width:500px;
-        height: 548px;
-    }
-
-    .modal_image_content{
-        display: flex;
-        flex-direction: row;
-    }
-
-    .modal_content_write{
-        display: flex;
-        flex-direction: column;
-        border-left: 1px solid rgba(0, 0, 0, 0.18);;
-    }
-
-    .feed_content_textarea{
-        resize: none;
-        width: 294px;
-        border: none;
-    }
-
+  .feed_content_textarea {
+    resize: none;
+    width: 294px;
+    border: none;
+  }
 </style>
 
 <body>
-<!-- 상단 내비게이션 바 -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom"
-  style="width: 100%; height: 50px; position: fixed; z-index: 999;">
+  <!-- 상단 내비게이션 바 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom"
+    style="width: 100%; height: 50px; position: fixed; z-index: 999;">
 
-  <div class="container-fluid" style = "justify-content: space-between; flex-wrap: nowrap; min-width: 1000px;">
-    <a class="navbar-brand" href="">
-      <img style="height: 30px; object-fit: contain "
-        src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png">
-    </a>
-    <input class="form-control" style="width: 500px" type="search" placeholder="검색 .." aria-label="Search">
+    <div class="container-fluid" style="justify-content: space-between; flex-wrap: nowrap; min-width: 1000px;">
+      <a class="navbar-brand" href="">
+        <img style="height: 30px; object-fit: contain "
+          src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png">
+      </a>
+      <input class="form-control" style="width: 500px" type="search" placeholder="검색 .." aria-label="Search">
 
       <div style="display: flex; flex-direction: row;">
-      <a href="" style="color : black" ;><span class="material-icons" style="padding-right: 10px">home</span></a>
-      <span class="material-icons" style="padding-right: 10px; cursor: pointer;">send</span>
-      <a href='#' onclick="return false;" style="color:black"><span id="add_feed" class="material-icons-outlined"
-          style="padding-right: 10px">add_box</span></a>
-      <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">explore</span>
-      <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">favorite_border</span>
+        <a href="" style="color : black" ;><span class="material-icons" style="padding-right: 10px">home</span></a>
+        <span class="material-icons" style="padding-right: 10px; cursor: pointer;">send</span>
+        <a href='#' onclick="return false;" style="color:black"><span id="add_feed" class="material-icons-outlined"
+            style="padding-right: 10px">add_box</span></a>
+        <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">explore</span>
+        <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">favorite_border</span>
 
 
-      <div class="dropdown">
-        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          <div class="profile_box" style="width: 30px; height :30px;">
-            <img class="profile_img" 
-            src="{% get_media_prefix %}{{ user.profile_image }}" />
+        <div class="dropdown">
+          <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="profile_box" style="width: 30px; height :30px;">
+              <img class="profile_img" src="{% get_media_prefix %}{{ user.profile_image }}" />
+            </div>
+          </a>
+
+          <ul class="dropdown-menu" style="left : -158%" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="/content/profile">프로필</a></li>
+            <li>
+              <hr class="dropdown=divider">
+            </li>
+            <li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- 바디 영역 -->
+  <div class="main_body">
+
+    <div class="left_body">
+
+      <!-- 여기서부터 피드박스-->
+      {% for feed in feeds %}
+      <div class="border feed_box">
+        <div class="feed_name">
+          <div class="profile_box" style="display: flex; justify-content: space-between;">
+            <img class="profile_img" src="{% get_media_prefix %}{{ feed.profile_image }}" />
           </div>
-        </a>
-
-        <ul class="dropdown-menu" style="left : -158%" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="/content/profile">프로필</a></li>
-          <li><hr class="dropdown=divider"></li>
-          <li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-
-
-<!-- 바디 영역 -->
-<div class="main_body">
-
-  <div class="left_body">
-
-<!-- 여기서부터 피드박스-->
-  {% for feed in feeds %}
-    <div class="border feed_box">
-      <div class="feed_name">
-        <div class="profile_box">
-          <img class="profile_img" src="{% get_media_prefix %}{{ feed.profile_image }}"/>
-        </div>
-        <span class="feed_name_txt"> {{ feed.nickname }} </span>
-      </div>
-      <img class="feed_img" src="{% get_media_prefix %}{{ feed.image }}">
-      <div class="feed_icon">
-        <div>
-          <span id ="favorite_{{ feed.id }}" feed_id ="{{ feed.id }}" 
-          class="favorite material-icons-outlined" 
-          style="color: red; cursor: pointer;">{% if feed.is_liked %}
-          favorite{% else %}favorite_border{% endif %}</span>
-          <span class="material-icons-outlined" style ="cursor: pointer;">mode_comment</span>
-          <span class="material-icons-outlined" style ="cursor: pointer;">send</span>
-        </div>
-        <div>
-          <span id = "bookmark_{{feed.id }}" feed_id =" {{ feed.id }}"class="bookmark material-icons-outlined" style ="cursor: pointer;">
-            {% if feed.is_marked %}
-            bookmark
-            {% else %}
-            bookmark_border
-            {% endif %}
-          </span>
-        </div>
-      </div>
-      <div class="feed_like">
-        <p class="feed_txt"> <b>좋아요 {{ feed.like_count }}개</b></p>
-      </div>
-      <div class="feed_content">
-        <p class="feed_txt"> <b> {{ feed.nickname }} </b> {{ feed.content }} </p>
-      </div>
-      <div id = "reply_list_{{ feed.id }}">
-        {% for reply in feed.reply_list %}
-        <div class="feed_reply">
-          <span class="feed_txt"> <b> {{ reply.nickname }} </b> {{ reply.reply_content }}</span>
-        </div>
-        {% endfor %}
-      </div>
-
-    <div style = "display: flex; flex-direction: row; align-items: center; border-top: solid 1px lightgray;">
-      <span style ="padding-left: 10px;" class="material-icons-outlined">sentiment_satisfied</span>
-      <input id = "reply_{{ feed.id }}" type ="text" class="form-control" style = "box-shadow : none; border: none; outline: none;" 
-      placeholder ="댓글 달기..">
-    <div feed_id="{{ feed.id }}" id ="reply_Btn" class ="upload_reply" style="width: 50px; color: cornflowerblue; font-weight: bold; cursor: pointer;">
-      게시
-    </div>
-    </div>
-  </div>
-    {% endfor %}
-</div>
-<!-- 여기까지 피드박스-->
-
-  
-
-
-
-  <div class="right_body">
-    <div class="feed_name" style="justify-content: space-between">
-      <div style="display: flex; align-items: center; ">
-        <div class="big_profile_box">
-          <img class="profile_img"
-               src="{% get_media_prefix %}{{ user.profile_image }}">
-        </div>
-        <div class="name_content">
-          <span class="feed_name_txt"> {{ user.nickname }} </span>
-          <span class="name_content_txt"> {{user.name }}</span>
-        </div>
-      </div><a href ="http://127.0.0.1:8000/content/profile" class="link_txt">전환</a></div>
-    
-    <div class="recommend_box">
-      <span style="color: gray"> 회원님을 위한 추천</span>
-      <a href="#" style="color:black; text-decoration : none;"><span style="font-weight: bold; font-size: 13px">모두 보기</span></a>
-    </div>
-
-    <div>
-      <div class="feed_name" style="justify-content: space-between">
-        <div class="profile_box">
-          <img class="profile_img"
-          src="https://w.namu.la/s/84e70d75dae0c3ac6fb138ba91dc99d4b091aa84bcd18b0612d8fc031155dde2ca3cd40f8f3fd06f228b6e8b64e82c599bffe95025f746ae649beb1856201f74e04a0b54997d26c4b62e883df790d0e07df46087748fb88ab2dbeaac9638669814dd02fc1e7d3099e3a0c5cd0f69dc58">
-        </div>
-        <div class="name_content">
-          <span class="feed_name_txt"> user 03 </span>
-          <span class="name_content_txt"> Jinstargram 신규가입</span>
-        </div>
-        <a class="link_txt">
-          팔로우
-        </a>
-      </div>
-
-      <div class="feed_name" style="justify-content: space-between">
-        <div class="profile_box">
-          <img class="profile_img"
-          src="https://img.hankyung.com/photo/202207/03.30094768.1.jpg">
-        </div>
-        <div class="name_content">
-          <span class="feed_name_txt"> user 04 </span>
-          <span class="name_content_txt"> IU 외 5명이 팔로우</span>
-        </div>
-        <a class="link_txt">
-          팔로우
-        </a>
-      </div>
-
-      <div class="feed_name" style="justify-content: space-between">
-        <div class="profile_box">
-          <img class="profile_img"
-            src="https://images.khan.co.kr/article/2022/06/15/l_2022061502000841200158621.jpg">
-        </div>
-        <div class="name_content">
-          <span class="feed_name_txt"> user 05 </span>
-          <span class="name_content_txt"> IU 외 5명이 팔로우</span>
-        </div>
-        <a class="link_txt">
-          팔로우
-        </a>
-      </div>
-
-      <div class="feed_name" style="justify-content: space-between">
-        <div class="profile_box">
-          <img class="profile_img"
-            src="http://img2.sbs.co.kr/img/seditor/VD/2021/06/02/7BL1622608417149-640-0.jpg">
-        </div>
-        <div class="name_content">
-          <span class="feed_name_txt"> user 06 </span>
-          <span class="name_content_txt"> 그냥 추천해봄 </span>
-        </div>
-        <a class="link_txt">
-          팔로우
-        </a>
-      </div>
-
-      <div class="feed_name" style="justify-content: space-between">
-        <div class="profile_box">
-          <img class="profile_img"
-            src="https://w.namu.la/s/639457812204108a84bcc8edf78b5ccfd1c9f4afbe42b6412b7bcedabb751d93d849b49eec93ede31c1f7d0f767047761c54a5fd05e882eb3d99c3aebdc13806413eb6fda3f18668b62258af9a3a2f42ced07eb38a1d209204ae19ec0d962cdf87fb7d04ab0c8efb8c0940aa072eef90">
-        </div>
-        <div class="name_content">
-          <span class="feed_name_txt"> user 07 </span>
-          <span class="name_content_txt"> 애도 유명해 </span>
-        </div>
-        <a class="link_txt">
-          팔로우
-        </a>
-      </div>
-    </div>
-
-    <div class="comment_box">
-      <span> 인스타그램 클론 코딩 </span>
-      <span> www.example.com </span>
-      <br>
-      <span> @2022 INSTAGRAM FROM FACEBOOK </span>
-    </div>
-    
-  </div>
-</div>
-
-<!-- 첫번째 모달-->
-<div id="first_modal" class="modal modal_overlay">
-  <div class="modal_window">
-      <div class="modal_title">
-          <div class="modal_title_side"></div>
-          <div> 새 이미지 업로드 </div>
+          <span class="feed_name_txt"> {{ feed.nickname }} </span>
           <div class="modal_title_side">
-              <span class="modal_close material-icons-outlined" style="cursor: pointer; font-size: 30px">close</span>
+            <span class="modal_close material-icons-outlined" style="cursor: pointer; font-size: 30px">close</span>
           </div>
+
+
+          <span class="modal_close material-icons-outlined"
+            style="cursor: pointer;font-size: 30px;float: right;width: 100px;display: flex;flex-direction: row;align-items: center;"
+            onclick="deleteFeed('{{ feed.id }}');">close</span>
+        </div>
+
+        <div class="modal_title_side">
+          <span class="modal_close material-icons-outlined" style="cursor: pointer; font-size: 30px">close</span>
+        </div>
+
+
+
+        <img class="feed_img" src="{% get_media_prefix %}{{ feed.image }}">
+        <div class="feed_icon">
+          <div>
+            <span id="favorite_{{ feed.id }}" feed_id="{{ feed.id }}" class="favorite material-icons-outlined"
+              style="color: red; cursor: pointer;">{% if feed.is_liked %}
+              favorite{% else %}favorite_border{% endif %}</span>
+            <span class="material-icons-outlined" style="cursor: pointer;">mode_comment</span>
+            <span class="material-icons-outlined" style="cursor: pointer;">send</span>
+          </div>
+          <div>
+            <span id="bookmark_{{feed.id }}" feed_id=" {{ feed.id }}" class="bookmark material-icons-outlined"
+              style="cursor: pointer;">
+              {% if feed.is_marked %}
+              bookmark
+              {% else %}
+              bookmark_border
+              {% endif %}
+            </span>
+          </div>
+        </div>
+        <div class="feed_like">
+          <p class="feed_txt"> <b>좋아요 {{ feed.like_count }}개</b></p>
+        </div>
+        <div class="feed_content">
+          <p class="feed_txt"> <b> {{ feed.nickname }} </b> {{ feed.content }} </p>
+        </div>
+        <div id="reply_list_{{ feed.id }}">
+          {% for reply in feed.reply_list %}
+          <div class="feed_reply">
+            <span class="feed_txt"> <b> {{ reply.nickname }} </b> {{ reply.reply_content }}</span>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div style="display: flex; flex-direction: row; align-items: center; border-top: solid 1px lightgray;">
+          <span style="padding-left: 10px;" class="material-icons-outlined">sentiment_satisfied</span>
+          <input id="reply_{{ feed.id }}" type="text" class="form-control"
+            style="box-shadow : none; border: none; outline: none;" placeholder="댓글 달기..">
+          <div feed_id="{{ feed.id }}" id="reply_Btn" class="upload_reply"
+            style="width: 50px; color: cornflowerblue; font-weight: bold; cursor: pointer;">
+            게시
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- 여기까지 피드박스-->
+
+    <div class="right_body">
+      <div class="feed_name" style="justify-content: space-between">
+        <div style="display: flex; align-items: center; ">
+          <div class="big_profile_box">
+            <img class="profile_img" src="{% get_media_prefix %}{{ user.profile_image }}">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> {{ user.nickname }} </span>
+            <span class="name_content_txt"> {{user.name }}</span>
+          </div>
+        </div><a href="/content/profile" class="link_txt">전환</a>
+      </div>
+
+      <div class="recommend_box">
+        <span style="color: gray"> 회원님을 위한 추천</span>
+        <a href="#" style="color:black; text-decoration : none;"><span style="font-weight: bold; font-size: 13px">모두
+            보기</span></a>
+      </div>
+
+      <div>
+        <div class="feed_name" style="justify-content: space-between">
+          <div class="profile_box">
+            <img class="profile_img"
+              src="https://w.namu.la/s/84e70d75dae0c3ac6fb138ba91dc99d4b091aa84bcd18b0612d8fc031155dde2ca3cd40f8f3fd06f228b6e8b64e82c599bffe95025f746ae649beb1856201f74e04a0b54997d26c4b62e883df790d0e07df46087748fb88ab2dbeaac9638669814dd02fc1e7d3099e3a0c5cd0f69dc58">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> user 03 </span>
+            <span class="name_content_txt"> Jinstargram 신규가입</span>
+          </div>
+          <a class="link_txt">
+            팔로우
+          </a>
+        </div>
+
+        <div class="feed_name" style="justify-content: space-between">
+          <div class="profile_box">
+            <img class="profile_img" src="https://img.hankyung.com/photo/202207/03.30094768.1.jpg">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> user 04 </span>
+            <span class="name_content_txt"> IU 외 5명이 팔로우</span>
+          </div>
+          <a class="link_txt">
+            팔로우
+          </a>
+        </div>
+
+        <div class="feed_name" style="justify-content: space-between">
+          <div class="profile_box">
+            <img class="profile_img" src="https://images.khan.co.kr/article/2022/06/15/l_2022061502000841200158621.jpg">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> user 05 </span>
+            <span class="name_content_txt"> IU 외 5명이 팔로우</span>
+          </div>
+          <a class="link_txt">
+            팔로우
+          </a>
+        </div>
+
+        <div class="feed_name" style="justify-content: space-between">
+          <div class="profile_box">
+            <img class="profile_img" src="http://img2.sbs.co.kr/img/seditor/VD/2021/06/02/7BL1622608417149-640-0.jpg">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> user 06 </span>
+            <span class="name_content_txt"> 그냥 추천해봄 </span>
+          </div>
+          <a class="link_txt">
+            팔로우
+          </a>
+        </div>
+
+        <div class="feed_name" style="justify-content: space-between">
+          <div class="profile_box">
+            <img class="profile_img"
+              src="https://w.namu.la/s/639457812204108a84bcc8edf78b5ccfd1c9f4afbe42b6412b7bcedabb751d93d849b49eec93ede31c1f7d0f767047761c54a5fd05e882eb3d99c3aebdc13806413eb6fda3f18668b62258af9a3a2f42ced07eb38a1d209204ae19ec0d962cdf87fb7d04ab0c8efb8c0940aa072eef90">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> user 07 </span>
+            <span class="name_content_txt"> 애도 유명해 </span>
+          </div>
+          <a class="link_txt">
+            팔로우
+          </a>
+        </div>
+      </div>
+
+      <div class="comment_box">
+        <span> 인스타그램 클론 코딩 </span>
+        <span> www.example.com </span>
+        <br>
+        <span> @2022 INSTAGRAM FROM FACEBOOK </span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 첫번째 모달-->
+  <div id="first_modal" class="modal modal_overlay">
+    <div class="modal_window">
+      <div class="modal_title">
+        <div class="modal_title_side"></div>
+        <div> 새 이미지 업로드 </div>
+        <div class="modal_title_side">
+          <span class="modal_close material-icons-outlined" style="cursor: pointer; font-size: 30px">close</span>
+        </div>
       </div>
       <div class="modal_image_upload">
-          <span style="text-align: center"> 사진을 여기에 끌어다 놓으세요. </span>
+        <span style="text-align: center"> 사진을 여기에 끌어다 놓으세요. </span>
 
       </div>
+    </div>
   </div>
-</div>
 
-<!-- 두번째 모달 -->
-<div id="second_modal" class="modal modal_overlay_content">
-  <div class="modal_window">
+  <!-- 두번째 모달 -->
+  <div id="second_modal" class="modal modal_overlay_content">
+    <div class="modal_window">
       <div class="modal_title">
-          <div class="modal_title_side"></div>
-          <div style="margin: 5px"> 새 이미지 </div>
-          <div class="modal_title_side">
-              <span class="modal_close material-icons-outlined" style="cursor: pointer; font-size: 30px">close</span>
-          </div>
+        <div class="modal_title_side"></div>
+        <div style="margin: 5px"> 새 이미지 </div>
+        <div class="modal_title_side">
+          <span class="modal_close material-icons-outlined" style="cursor: pointer; font-size: 30px">close</span>
+        </div>
       </div>
       <div class="modal_image_content">
-          <div id="input_image" class="modal_image_upload_content"></div>
-          <div class="modal_content_write">
-              <div class="feed_name">
-                  <div class="profile_box">
-                      <img id="input_profile_image" class="profile_img" 
-                      src="{% get_media_prefix %}{{ user.profile_image }}"/>
-                  </div>
-                  <span id="input_user_id" class="feed_name_txt"> {{ user.nickname }} </span>
-              </div>
-              <div style="height: 440px">
-                  <textarea id="input_content" class="feed_content_textarea form-control col-sm-5" rows="10" 
-                  placeholder="설명을 입력하세요..."></textarea>
-              </div>
-              <div style="width: 100%; text-align: center">
-                  <button id="feed_create_button" type="button" class="btn btn-primary" style="width: 268px"> 공유하기</button>
-              </div>
+        <div id="input_image" class="modal_image_upload_content"></div>
+        <div class="modal_content_write">
+          <div class="feed_name">
+            <div class="profile_box">
+              <img id="input_profile_image" class="profile_img" src="{% get_media_prefix %}{{ user.profile_image }}" />
+            </div>
+            <span id="input_user_id" class="feed_name_txt"> {{ user.nickname }} </span>
           </div>
+          <div style="height: 440px">
+            <textarea id="input_content" class="feed_content_textarea form-control col-sm-5" rows="10"
+              placeholder="설명을 입력하세요..."></textarea>
+          </div>
+          <div style="width: 100%; text-align: center">
+            <button id="feed_create_button" type="button" class="btn btn-primary" style="width: 268px"> 공유하기</button>
+          </div>
+        </div>
       </div>
 
+    </div>
   </div>
-</div>
 
-
-<!-- Optional JavaScript; choose one of the two! -->
-<script>
-
+  <!-- Optional JavaScript; choose one of the two! -->
+  <script>
     $(".bookmark").click(function (event) {
-        let feed_id = event.target.attributes.getNamedItem('feed_id').value;
-        let bookmark_id = event.target.id;
-        let bookmark_text = $.trim($('#' + bookmark_id).html());
-        if (bookmark_text == 'bookmark') {
-            $('#' + bookmark_id).html('bookmark_border');
-        } else {
-            $('#' + bookmark_id).html('bookmark');
-        }
+      let feed_id = event.target.attributes.getNamedItem('feed_id').value;
+      let bookmark_id = event.target.id;
+      let bookmark_text = $.trim($('#' + bookmark_id).html());
+      if (bookmark_text == 'bookmark') {
+        $('#' + bookmark_id).html('bookmark_border');
+      } else {
+        $('#' + bookmark_id).html('bookmark');
+      }
 
-        $.ajax({
-            url: "/content/bookmark",
-            data: {
-                feed_id: feed_id,
-                bookmark_text: bookmark_text
-            },
-            method: "POST",
-            success: function (data) {
-                console.log("성공");
-            },
-            error: function (request, status, error) {
-                console.log("에러");
-            },
-            complete: function () {
-                console.log("완료");
-            }
-        });
+      $.ajax({
+        url: "/content/bookmark",
+        data: {
+          feed_id: feed_id,
+          bookmark_text: bookmark_text
+        },
+        method: "POST",
+        success: function (data) {
+          console.log("성공");
+        },
+        error: function (request, status, error) {
+          console.log("에러");
+        },
+        complete: function () {
+          console.log("완료");
+        }
+      });
     });
 
 
     $(".favorite").click(function (event) {
-        let feed_id = event.target.attributes.getNamedItem('feed_id').value;
-        let favorite_id = event.target.id;
-        console.log(favorite_id);
-        let favorite_text = $.trim($('#' + favorite_id).html());
-        console.log(favorite_text);
-        if (favorite_text == 'favorite') {
-            $('#' + favorite_id).html('favorite_border');
-        } else {
-            $('#' + favorite_id).html('favorite');
-        }
+      let feed_id = event.target.attributes.getNamedItem('feed_id').value;
+      let favorite_id = event.target.id;
+      console.log(favorite_id);
+      let favorite_text = $.trim($('#' + favorite_id).html());
+      console.log(favorite_text);
+      if (favorite_text == 'favorite') {
+        $('#' + favorite_id).html('favorite_border');
+      } else {
+        $('#' + favorite_id).html('favorite');
+      }
 
-        $.ajax({
-            url: "/content/like",
-            data: {
-                feed_id: feed_id,
-                favorite_text: favorite_text
-            },
-            method: "POST",
-            success: function (data) {
-                console.log("성공");
-            },
-            error: function (request, status, error) {
-                console.log("에러");
-            },
-            complete: function () {
-                console.log("완료");
-            }
-        });
+      $.ajax({
+        url: "/content/like",
+        data: {
+          feed_id: feed_id,
+          favorite_text: favorite_text
+        },
+        method: "POST",
+        success: function (data) {
+          console.log("성공");
+        },
+        error: function (request, status, error) {
+          console.log("에러");
+        },
+        complete: function (resp) {
+          console.log("완료");
+          window.location.reload()
+        }
+      });
     });
 
     $(".upload_reply").click(function (event) {
-        let feed_id = event.target.attributes.getNamedItem('feed_id').value;
-        let reply_id = 'reply_' + feed_id;
-        let reply_content = $('#' + reply_id).val();
+      let feed_id = event.target.attributes.getNamedItem('feed_id').value;
+      let reply_id = 'reply_' + feed_id;
+      let reply_content = $('#' + reply_id).val();
 
-        if (reply_content.length <= 0) {
-            alert("댓글을 입력하세요");
-            return 0;
+      if (reply_content.length <= 0) {
+        alert("댓글을 입력하세요");
+        return 0;
+      }
+
+      $.ajax({
+        url: "/content/reply",
+        data: {
+          feed_id: feed_id,
+          reply_content: reply_content
+        },
+        method: "POST",
+        success: function (data) {
+          console.log("성공");
+          alert("댓글 성공");
+          $("#reply_list_" + feed_id).append("<div style='margin: 0 20px;text-align: left;font-size: 14px'><b>{{ user.nickname }}</b> " + reply_content + "</div>")
+
+        },
+        error: function (request, status, error) {
+          console.log("에러");
+        },
+        complete: function () {
+          console.log("완료");
+          $('#' + reply_id).val('');
         }
-
-        $.ajax({
-            url: "/content/reply",
-            data: {
-                feed_id: feed_id,
-                reply_content: reply_content
-            },
-            method: "POST",
-            success: function (data) {
-                console.log("성공");
-                alert("댓글 성공");
-                $("#reply_list_" + feed_id).append("<div style='margin: 0 20px;text-align: left;font-size: 14px'><b>{{ user.nickname }}</b> " + reply_content + "</div>")
-
-            },
-            error: function (request, status, error) {
-                console.log("에러");
-            },
-            complete: function () {
-                console.log("완료");
-                $('#' + reply_id).val('');
-            }
-        });
+      });
 
     });
 
     $(".modal_close").click(function () {
-        $('#first_modal').css({
-            display: 'none'
-        });
-        $('#second_modal').css({
-            display: 'none'
-        });
+      $('#first_modal').css({
+        display: 'none'
+      });
+      $('#second_modal').css({
+        display: 'none'
+      });
+      $(document.body).css({
+        overflow: 'visible'
+      });
     });
 
     let files;
 
     $('#add_feed').click(function () {
-        $('#first_modal').css({
-            display: 'flex'
-        });
+      $('#first_modal').css({
+        display: 'flex'
+      });
 
-        $(document.body).css({
-            overflow: 'hidden'
-        });
+      $(document.body).css({
+        overflow: 'hidden'
+      });
 
     });
 
     $('#feed_create_button').click(function () {
-        alert("공유하기 눌렀다.");
+      alert("공유하기 눌렀다.");
 
-        let file = files[0];
-        let image = files[0].name;
-        let content = $('#input_content').val();
+      let file = files[0];
+      let image = files[0].name;
+      let content = $('#input_content').val();
 
-        let fd = new FormData();
+      let fd = new FormData();
 
-        fd.append('file', file);
-        fd.append('image', image);
-        fd.append('content', content);
-        
-        $.ajax({
-            url: "/content/upload",
-            data: fd,
-            method: "POST",
-            processData: false,
-            contentType: false,
-            success: function (data) {
-                console.log("성공");
-            },
-            error: function (request, status, error) {
-                console.log("에러");
-            },
-            complete: function () {
-                console.log("완료");
-                location.replace("/main");
-            }
-        });
+      fd.append('file', file);
+      fd.append('image', image);
+      fd.append('content', content);
 
-        
+      $.ajax({
+        url: "/content/upload",
+        data: fd,
+        method: "POST",
+        processData: false,
+        contentType: false,
+        success: function (data) {
+          console.log("성공");
+        },
+        error: function (request, status, error) {
+          console.log("에러");
+        },
+        complete: function () {
+          console.log("완료");
+          location.replace("/main");
+        }
+      });
+
+
     });
 
 
     $('.modal_image_upload')
-        .on("dragover", dragOver)
-        .on("dragleave", dragOver)
-        .on("drop", uploadFiles);
+      .on("dragover", dragOver)
+      .on("dragleave", dragOver)
+      .on("drop", uploadFiles);
 
     function dragOver(e) {
-        e.stopPropagation();
-        e.preventDefault();
+      e.stopPropagation();
+      e.preventDefault();
 
-        if (e.type == "dragover") {
-            $(e.target).css({
-                "background-color": "black",
-                "outline-offset": "-20px"
-            });
-        } else {
-            $(e.target).css({
-              "background-color": "white",
-              "outline-offset": "-10px"
-            });
-        }
+      if (e.type == "dragover") {
+        $(e.target).css({
+          "background-color": "black",
+          "outline-offset": "-20px"
+        });
+      } else {
+        $(e.target).css({
+          "background-color": "white",
+          "outline-offset": "-10px"
+        });
+      }
     }
 
     function uploadFiles(e) {
-        e.stopPropagation();
-        e.preventDefault();
+      e.stopPropagation();
+      e.preventDefault();
 
-        e.dataTransfer = e.originalEvent.dataTransfer; //2
-        files = e.target.files || e.dataTransfer.files;
-        console.log("뭔가 파일을 올렸네??" + files[0].name);
-        if (files.length > 1) {
-            alert('하나만 올려라.');
-            return;
+      e.dataTransfer = e.originalEvent.dataTransfer; //2
+      files = e.target.files || e.dataTransfer.files;
+      console.log("뭔가 파일을 올렸네??" + files[0].name);
+      if (files.length > 1) {
+        alert('하나만 올려라.');
+        return;
+      }
+
+      if (files[0].type.match(/image.*/)) {
+        $('#first_modal').css({
+          display: 'none'
+        });
+        $('#second_modal').css({
+          display: 'flex'
+        });
+
+        $('.modal_image_upload_content').css({
+          "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
+          "outline": "none",
+          "background-size": "contain",
+          "background-repeat": "no-repeat",
+          "background-position": "center"
+        });
+      } else {
+        alert('이미지가 아닙니다.');
+        return;
+      }
+    };
+
+    function deleteFeed(id) {
+      let fd = new FormData();
+
+      fd.append('id', id);
+
+      $.ajax({
+        url: "/content/delete",
+        data: fd,
+        method: "DELETE",
+        processData: false,
+        contentType: false, // application/json
+        success: function (data) {
+          console.log("성공");
+        },
+        error: function (request, status, error) {
+          console.log("에러");
+        },
+        complete: function () {
+          console.log("완료");
+          location.replace("/main");
         }
-      
-        if (files[0].type.match(/image.*/)) {
-            $('#first_modal').css({
-                display: 'none'
-            });
-            $('#second_modal').css({
-                display: 'flex'
-            }); 
+      });
+    }
 
-            $('.modal_image_upload_content').css({
-                "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
-                "outline": "none",
-                "background-size": "contain",
-                "background-repeat": "no-repeat",
-                "background-position": "center"
-            });
-        } else {
-            alert('이미지가 아닙니다.');
-            return;
-        }
-      };
+  </script>
 
 
-</script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
 
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
 -->

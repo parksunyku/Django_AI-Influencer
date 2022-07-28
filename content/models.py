@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Feed(models.Model):
+    feed_id = models.IntegerField(default=0)
     content = models.TextField()         # 글 내용
     image = models.TextField()           # 피드 이미지
     email = models.EmailField(default='')        # 글쓴이
