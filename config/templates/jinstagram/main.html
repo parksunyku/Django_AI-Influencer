@@ -348,7 +348,7 @@
 
         <div style="display: flex; flex-direction: row; align-items: center; border-top: solid 1px lightgray;">
           <span style="padding-left: 10px;" class="material-icons-outlined">sentiment_satisfied</span>
-          <input id="reply_{{ feed.id }}" type="text" class="form-control"
+          <input id="reply_{{ feed.id }}" type="text" class="form-control" onkeyup="enterkey()"
             style="box-shadow : none; border: none; outline: none;" placeholder="댓글 달기..">
           <div feed_id="{{ feed.id }}" id="reply_Btn" class="upload_reply"
             style="width: 50px; color: cornflowerblue; font-weight: bold; cursor: pointer;">
@@ -494,7 +494,7 @@
             </div>
             <span id="input_user_id" class="feed_name_txt"> {{ user.nickname }} </span>
           </div>
-          <div style="height: 440px">
+          <div style="height: 440px" onkeyup="enterkey2()">
             <textarea id="input_content" class="feed_content_textarea form-control col-sm-5" rows="10"
               placeholder="설명을 입력하세요..."></textarea>
           </div>
@@ -509,6 +509,7 @@
 
   <!-- Optional JavaScript; choose one of the two! -->
   <script>
+
     $(".bookmark").click(function (event) {
       let feed_id = event.target.attributes.getNamedItem('feed_id').value;
       let bookmark_id = event.target.id;
@@ -537,6 +538,7 @@
         }
       });
     });
+
 
 
     $(".favorite").click(function (event) {
@@ -571,7 +573,17 @@
       });
     });
 
+    function enterkey() {
+      if (window.event.keyCode == 13) {
+        replyCheck();
+      };
+    };
+
     $(".upload_reply").click(function (event) {
+      replyCheck();
+    });
+
+    function replyCheck() {
       let feed_id = event.target.attributes.getNamedItem('feed_id').value;
       let reply_id = 'reply_' + feed_id;
       let reply_content = $('#' + reply_id).val();
@@ -603,7 +615,9 @@
         }
       });
 
-    });
+    };
+
+
 
     $(".modal_close").click(function () {
       $('#first_modal').css({
@@ -630,7 +644,18 @@
 
     });
 
+    function enterkey2() {
+      if (window.event.keyCode == 13) {
+        createBtn();
+      };
+    };
+
     $('#feed_create_button').click(function () {
+      createBtn();
+    });
+
+    function createBtn() {
+
       alert("공유하기 눌렀다.");
 
       let file = files[0];
@@ -662,7 +687,7 @@
       });
 
 
-    });
+    };
 
 
     $('.modal_image_upload')
