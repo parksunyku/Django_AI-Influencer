@@ -465,14 +465,27 @@
             });
         });
 
+        window.addEventListener("keyup", (e) => {
+            const key = e.keyCode;
+            console.log("window key event", key);
+            if (key == 27) {
+                esc_check();
+            };
+
+        })
+
         $(".modal_close").click(function () {
+            esc_check();
+        });
+
+        function esc_check() {
             $('#first_modal').css({
                 display: 'none'
             });
             $('#second_modal').css({
                 display: 'none'
             });
-        });
+        };
 
         let files;
 

@@ -31,7 +31,7 @@ class Main(APIView):
             for reply in reply_object_list:
                 reply_user = User.objects.filter(email=reply.email).first()
                 reply_list.append(
-                    dict(reply_content=reply.reply_content, nickname=reply_user.nickname))
+                    dict(id=reply.id, reply_content=reply.reply_content, nickname=reply_user.nickname))
             like_count = Like.objects.filter(
                 feed_id=feed.id, is_like=True).count()
 
@@ -195,11 +195,16 @@ class FeedControl(APIView):
         return Response(status=200)
 
     def delete(self, request):
-        id = request.data.get('id', None)
-        Reply.objects.filter(feed_id=id).delete()
-        Like.objects.filter(feed_id=id).delete()
-        Feed.objects.filter(id=id).delete()
-        return Response(status=200)
+        if request.data.get('target', None) == 'feed':
+            id = request.data.get('id', None)
+            Reply.objects.filter(feed_id=id).delete()
+            Like.objects.filter(feed_id=id).delete()
+            Feed.objects.filter(id=id).delete()
+            return Response(status=200)
+        else:
+            id = request.data.get('id', None)
+            Reply.objects.filter(id=id).delete()
+            return Response(status=200)
 
     def toggleBookmark(self, request):
         feed_id = request.data.get('feed_id', None)
