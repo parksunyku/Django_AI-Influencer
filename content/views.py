@@ -72,9 +72,10 @@ class UploadFeed(APIView):
 
 
 class Profile(APIView):
-    def get(self, request):
+    def get(self, request, nickname):
 
         email = request.session.get('email', None)
+        profile_user = User.objects.filter(nickname=nickname).first()
 
         if email is None:
             return render(request, "user/login.html")
@@ -84,15 +85,15 @@ class Profile(APIView):
         if user is None:
             return render(request, "user/login.html")
 
-        feed_list = Feed.objects.filter(email=email).all()
+        feed_list = Feed.objects.filter(email=profile_user.email).all()
         like_list = list(Like.objects.filter(
-            email=email, is_like=True).values_list('feed_id', flat=True))
+            email=profile_user.email, is_like=True).values_list('feed_id', flat=True))
         like_feed_list = Feed.objects.filter(id__in=like_list)
         bookmark_list = list(Bookmark.objects.filter(
-            email=email, is_marked=True).values_list('feed_id', flat=True))
+            email=profile_user.email, is_marked=True).values_list('feed_id', flat=True))
         bookmark_feed_list = Feed.objects.filter(id__in=bookmark_list)
         return render(request, 'content/profile.html', context=dict(feed_list=feed_list, like_feed_list=like_feed_list,
-                                                                    bookmark_feed_list=bookmark_feed_list, user=user))
+                                                                    bookmark_feed_list=bookmark_feed_list, profile_user=profile_user, user=user))
 
 
 class UploadReply(APIView):

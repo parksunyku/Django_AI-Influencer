@@ -41,7 +41,7 @@
       <div style="font-weight: bold; color: gray; padding-bottom : 10px;"> 친구들의 사진과 동영상을 보려면 가입하세요.</div>
       <div>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" style="font-size: 14px; height: 24px;" id="input_email"
+          <input type="email" class="form-control" style="font-size: 14px; height: 24px;" id="regi_email"
             placeholder="name@example.com">
           <label for="input_email" style="font-size: 14px; padding: 4px 10px">이메일 주소</label>
         </div>
@@ -62,9 +62,17 @@
       </div>
       <div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" style="font-size: 14px; height: 24px;" id="input_password"
+          <input type="password" class="form-control" style="font-size: 14px; height: 24px;" id="regi_pw"
             placeholder="name@example.com" onkeyup="enterkey()" />
-          <label for="input_password" style="font-size: 14px; padding: 4px 10px">비밀번호</label>
+          <label for="regi_pw" style="font-size: 14px; padding: 4px 10px">비밀번호</label>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" style="font-size: 14px; height: 24px;" id="regi_pw_chk"
+            placeholder="name@example.com" onkeyup="enterkey()" />
+          <label for="regi_pw_chk" style="font-size: 14px; padding: 4px 10px">비밀번호 확인</label>
         </div>
       </div>
 
@@ -90,36 +98,101 @@
 
     // 여기는 backend의 기능
     function joinCheck() {
-      const email = $('#input_email').val();
-      const password = $('#input_password').val();
+      const email = $('#regi_email').val();
+      const password = $('#regi_pw').val();
       const nickname = $('#input_nickname').val();
       const name = $('#input_name').val();
       //console.log(email, password, nickname, name);
+      if (check_pw() && check_email()) {
+        $.ajax({
+          url: "/user/join",
+          data: {
+            email: email,
+            password: password,
+            nickname: nickname,
+            name: name
+          },
+          method: "POST",
+          success: function (data) {
+            console.log("성공");
+            alert("회원가입 성공했습니다. 로그인 해주세요.");
+            location.replace('/main');
+          },
+          error: function (request, status, error) {
+            console.log("에러:" + request['name'] + "/" + status + "/" + error);
 
-      $.ajax({
-        url: "/user/join",
-        data: {
-          email: email,
-          password: password,
-          nickname: nickname,
-          name: name
-        },
-        method: "POST",
-        success: function (data) {
-          console.log("성공");
-          alert("회원가입 성공했습니다. 로그인 해주세요.");
-          location.replace('/main');
-        },
-        error: function (request, status, error) {
-          console.log("에러:" + request['name'] + "/" + status + "/" + error);
+            if (error == "3") alert("이미 사용된 이메일주소입니다. 다른이메일 주소를 입력하세요");
+            else alert("닉네임이 사용중입니다");
+          },
+          complete: function () {
+            console.log("완료");
+          }
+        })
+      }
+    }
 
-          if (error == "3") alert("이미 사용된 이메일주소입니다. 다른이메일 주소를 입력하세요");
-          else alert("닉네임이 사용중입니다");
-        },
-        complete: function () {
-          console.log("완료");
+
+
+    function check_pw() {
+
+      let pw = document.getElementById('regi_pw').value;
+      let SC = ["!", "@", "#", "$", "%"];
+      let check_SC = 0;
+
+      if (pw.length < 6 || pw.length > 16) {
+        window.alert('비밀번호는 6글자 이상, 16글자 이하만 이용 가능합니다.');
+        document.getElementById('regi_pw').value = '';
+        document.getElementById('regi_pw_chk').value = '';
+        return false
+      }
+      for (var i = 0; i < SC.length; i++) {
+        if (pw.indexOf(SC[i]) != -1) {
+          check_SC = 1;
         }
-      })
+      }
+      if (check_SC == 0) {
+        window.alert('!,@,#,$,% 의 특수문자가 들어가 있지 않습니다.')
+        document.getElementById('regi_pw').value = '';
+        document.getElementById('regi_pw_chk').value = '';
+        return false
+
+      }
+      if (document.getElementById('regi_pw').value != '' && document.getElementById('regi_pw_chk').value != '') {
+        if (document.getElementById('regi_pw').value != document.getElementById('regi_pw_chk').value) {
+          window.alert('비밀번호가 일치하지 않습니다.');
+          document.getElementById('regi_pw').value = '';
+          document.getElementById('regi_pw_chk').value = '';
+          return false
+        }
+      }
+      return true
+    }
+
+    function check_email() {
+      let email = document.getElementById('regi_email').value;
+      let SC_email_1 = ['@'];
+      let SC_email_2 = ['.'];
+      let ck_SC_email_1 = 0;
+      let ck_SC_email_2 = 0;
+
+      for (var j = 0; j < SC_email_1.length; j++) {
+        if (email.indexOf(SC_email_1[j]) != -1) {
+          ck_SC_email_1 = 1;
+        }
+      }
+
+      for (var k = 0; k < SC_email_2.length; k++) {
+        if (email.indexOf(SC_email_2[k]) != -1) {
+          ck_SC_email_2 = 1;
+        }
+      }
+
+      if (ck_SC_email_1 == 0 || ck_SC_email_2 == 0) {
+        window.alert('이메일 형식에 맞게 작성해주세요.')
+        document.getElementById('regi_email').value = '';
+        return false                       // 문제 발생 시, 입력칸 초기화
+      }
+      return true
     }
 
 

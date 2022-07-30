@@ -278,7 +278,7 @@
           </a>
 
           <ul class="dropdown-menu" style="left : -158%" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="/content/profile">프로필</a></li>
+            <li><a class="dropdown-item" href="/content/profile/{{ user.nickname }}">프로필</a></li>
             <li>
               <hr class="dropdown=divider">
             </li>
@@ -375,7 +375,7 @@
             <span class="feed_name_txt"> {{ user.nickname }} </span>
             <span class="name_content_txt"> {{user.name }}</span>
           </div>
-        </div><a href="/content/profile" class="link_txt">전환</a>
+        </div><a href="/content/profile/{{ user.nickname }}" class="link_txt">전환</a>
       </div>
 
       <div class="recommend_box">
