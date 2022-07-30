@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from content.models import Feed, Reply, Like, Bookmark
 from user.models import User
 import os
-from config.settings import MEDIA_ROOT
+from config.settings.base import MEDIA_ROOT
 
 
 class Main(APIView):

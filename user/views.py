@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from config.settings import MEDIA_ROOT
+from config.settings.base import MEDIA_ROOT
 from content.models import Feed
 
 from .models import User
