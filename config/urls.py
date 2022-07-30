@@ -18,9 +18,10 @@ from django.urls import path, include
 from content.views import Main, UploadFeed
 from .settings import MEDIA_ROOT, MEDIA_URL
 from django.conf.urls.static import static
+import config.views
 
 urlpatterns = [
-
+    path('', config.views.index, name='index'),
     path('admin/', admin.site.urls),
     path('main/', Main.as_view()),
     path('content/', include('content.urls')),
