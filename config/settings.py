@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-niy2fl0*ek2p)vn9w)=s4tp^)l_w*6!%7y+e^c^c35b^&-$jns
 DEBUG = True
 
 ALLOWED_HOSTS = ['52.78.122.148', 'ainf.shop']
+ALLOWED_HOSTS = ['*']
 
 # LOGGING = {
 #     'version': 1,
