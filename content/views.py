@@ -78,12 +78,12 @@ class Profile(APIView):
         profile_user = User.objects.filter(nickname=nickname).first()
 
         if email is None:
-            return render(request, "user/login.html")
+            user = None
+        else:
+            user = User.objects.filter(email=email).first()
 
-        user = User.objects.filter(email=email).first()
-
-        if user is None:
-            return render(request, "user/login.html")
+        # if user is None:
+        # return render(request, "user/login.html")
 
         feed_list = Feed.objects.filter(email=profile_user.email).all()
         like_list = list(Like.objects.filter(

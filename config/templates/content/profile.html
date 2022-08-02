@@ -269,7 +269,10 @@
                 <span class="material-icons-outlined"
                     style="cursor: pointer; padding-right: 10px">favorite_border</span>
 
-
+                {% if user is None %}
+                <a href="/user/login" style="color : black" ;><span class="material-icons"
+                        style="padding-right: 10px">login</span></a>
+                {% else %}
                 <div class="dropdown">
                     <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="profile_box" style="width: 30px; height :30px;">
@@ -285,6 +288,7 @@
                         <li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
                     </ul>
                 </div>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -302,9 +306,11 @@
                 <div style="font-size: 26px; margin-right: 40px">
                     {{ profile_user.nickname }}
                 </div>
+                {% if profile_user == user %}
                 <button id="button_profile_upload" style="margin-right: 40px;"> 프로필 사진 편집</button>
                 <input type="file" id="input_fileupload" onchange="profile_upload();" style="display: none;" />
                 <span class="material-icons-outlined">settings</span>
+                {% endif %}
             </div>
 
             <div style="margin-bottom: 20px">
@@ -618,7 +624,7 @@
                 },
                 complete: function () {
                     console.log("완료");
-                    location.replace("/content/profile");
+                    location.replace("/content/profile/{{ user.nickname }}");
                 }
             });
 
