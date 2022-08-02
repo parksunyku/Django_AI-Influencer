@@ -254,10 +254,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom"
         style="width: 100%;height: 50px;position: fixed; z-index: 999;">
         <div class="container">
-            <a class="navbar-brand" href="/main">
-                <img style="height: 30px; object-fit: contain"
-                    src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png">
-            </a>
+            <a class="navbar-brand" href="/">
+                <img style="height: 30px; object-fit: contain" src="{% static './images/favcon.png' %}"><span
+                    style="color :purple; font-weight: bold;"> AINF
+                </span></a>
             <input class="form-control" style="width: 500px" type="search" placeholder="검색 .." aria-label="Search">
             <div style="display: flex; flex-direction: row;">
                 <a href="/main" style="color : black" ;><span class="material-icons"
@@ -317,7 +317,7 @@
                 게시물 내 게시물 건수 팔로워 111 팔로잉 111
             </div>
             <div>
-                <b>{{user.name }} </b>
+                <b>{{ profile_user.name }} </b>
             </div>
         </div>
     </div>

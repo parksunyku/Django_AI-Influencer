@@ -18,6 +18,7 @@ class User(AbstractBaseUser):
     name = models.CharField(max_length=24)
     email = models.EmailField(unique=True)
     USERNAME_FIELD = 'nickname'
+    user_code = models.IntegerField(default=0)
 
     class Meta:
         db_table = "User"
