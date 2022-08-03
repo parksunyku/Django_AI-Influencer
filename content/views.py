@@ -13,12 +13,13 @@ class Main(APIView):
         email = request.session.get('email', None)
 
         if email is None:
-            return render(request, "user/login.html")
+            # return render(request, "user/login.html")
+            user = None
+        else:
+            user = User.objects.filter(email=email).first()
 
-        user = User.objects.filter(email=email).first()
-
-        if user is None:
-            return render(request, "user/login.html")
+        # if user is None:
+        #     return render(request, "user/login.html")
 
         feed_object_list = Feed.objects.all().order_by(
             '-id')  # select * from content_feed;

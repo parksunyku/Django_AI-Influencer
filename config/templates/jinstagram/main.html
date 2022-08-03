@@ -264,12 +264,19 @@
       <div style="display: flex; flex-direction: row;">
         <a href="" style="color : black" ;><span class="material-icons" style="padding-right: 10px">home</span></a>
         <span class="material-icons" style="padding-right: 10px; cursor: pointer;">send</span>
+        {% if user != None %}
+        {% if user.user_code == 1 or user.user_code == 2 %}
         <a href='#' onclick="return false;" style="color:black"><span id="add_feed" class="material-icons-outlined"
             style="padding-right: 10px">add_box</span></a>
+        {% endif %}
+        {% endif %}
         <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">explore</span>
         <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">favorite_border</span>
 
-
+        {% if user is None %}
+        <a href="/user/login" style="color : black" ;><span class="material-icons"
+            style="padding-right: 10px">login</span></a>
+        {% else %}
         <div class="dropdown">
           <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="profile_box" style="width: 30px; height :30px;">
@@ -285,6 +292,7 @@
             <li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
           </ul>
         </div>
+        {% endif %}
       </div>
     </div>
   </nav>
@@ -462,7 +470,7 @@
 
     </div>
   </div>
-
+  {% if user != None %}
   <!-- 첫번째 모달-->
   <div id="first_modal" class="modal modal_overlay">
     <div class="modal_window">
@@ -511,7 +519,7 @@
 
     </div>
   </div>
-
+  {% endif %}
   <!-- Optional JavaScript; choose one of the two! -->
   <script>
 

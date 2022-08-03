@@ -263,8 +263,12 @@
                 <a href="/main" style="color : black" ;><span class="material-icons"
                         style="padding-right: 10px">home</span></a>
                 <span class="material-icons" style="cursor: pointer; padding-right: 10px">send</span>
+                {% if user != None %}
+                {% if user.user_code == 1 or user.user_code == 2 %}
                 <span id="add_feed" class="material-icons-outlined"
                     style="cursor: pointer; padding-right: 10px">add_box</span>
+                {% endif %}
+                {% endif %}
                 <span class="material-icons-outlined" style="cursor: pointer; padding-right: 10px">explore</span>
                 <span class="material-icons-outlined"
                     style="cursor: pointer; padding-right: 10px">favorite_border</span>
@@ -381,6 +385,7 @@
         </div>
     </div>
 
+    {% if user != None %}
     <!-- 첫번째 모달-->
     <div id="first_modal" class="modal modal_overlay">
         <div class="modal_window">
@@ -429,9 +434,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    {% endif %}
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script>
