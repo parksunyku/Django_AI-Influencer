@@ -1,1 +1,1491 @@
 2022-08-03 10:11:10,307 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2022-08-03 10:14:17,352 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2022-08-03 10:14:26,331 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:23:11,805 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:23:35,460 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:23:49,345 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:23:49,531 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:23:51,888 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:23:52,012 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:23:52,598 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:23:52,728 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:23:53,277 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:23:53,416 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:23:55,866 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:23:56,628 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:23:57,542 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:24:00,619 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:24:04,487 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:24:04,620 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:24:04,970 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:24:05,096 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:24:06,486 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:24:07,899 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:24:08,470 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:24:09,450 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:24:09,575 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:24:10,889 [ERROR] django.request: Internal Server Error: /content/bookmark
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 155, in post
+    Bookmark.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_bookmark.email
+2022-08-03 10:24:12,000 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:24:12,138 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:24:28,474 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:24:28,633 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:24:30,469 [ERROR] django.request: Internal Server Error: /content/like
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: content_like.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\dev\project\Jinstagram\content\views.py", line 130, in post
+    Like.objects.create(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 806, in save
+    self.save_base(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 857, in save_base
+    updated = self._save_table(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1000, in _save_table
+    results = self._do_insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\base.py", line 1041, in _do_insert
+    return manager._insert(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\query.py", line 1434, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1621, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\dev\project\Jinstagram\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: content_like.email
+2022-08-03 10:24:30,601 [WARNING] django.request: Not Found: /media/
+2022-08-03 10:25:14,416 [WARNING] django.request: Not Found: /content/profile/
+2022-08-03 11:52:45,310 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:52:45,317 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:52:45,320 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:52:45,386 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:52:45,388 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:52:45,389 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:52:45,392 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:52:45,396 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:52:45,399 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:52:45,401 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:52:45,404 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:52:45,407 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:52:45,413 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:52:45,415 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:52:45,418 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:52:45,420 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:52:45,423 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:52:45,427 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:52:45,430 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:52:45,433 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:52:45,436 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:52:45,438 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:52:45,443 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:52:45,446 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:52:45,449 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:52:45,451 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:52:45,455 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:52:48,671 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:52:48,673 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:52:48,683 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:52:48,684 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:52:48,686 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:52:48,687 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:52:48,688 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:52:48,690 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:52:48,695 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:52:48,698 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:52:48,702 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:52:48,704 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:52:48,707 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:52:48,712 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:52:48,715 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:52:48,718 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:52:48,721 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:52:48,725 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:52:48,728 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:52:48,732 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:52:48,736 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:52:48,740 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:52:48,745 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:52:48,748 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:52:48,750 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:52:48,753 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:52:48,756 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:53:04,048 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:53:04,056 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:53:04,058 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:53:04,059 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:53:04,060 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:53:04,062 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:53:04,063 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:53:04,069 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:53:04,071 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:53:04,074 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:53:04,077 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:53:04,079 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:53:04,082 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:53:04,086 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:53:04,089 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:53:04,092 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:53:04,095 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:53:04,099 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:53:04,103 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:53:04,106 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:53:04,110 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:53:04,113 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:53:04,116 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:53:04,120 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:53:04,122 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:53:04,124 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:53:04,127 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:54:01,485 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:54:01,492 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:54:01,493 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:54:01,494 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:54:01,495 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:54:01,496 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:54:01,497 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:54:01,504 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:54:01,505 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:54:01,506 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:54:01,508 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:54:01,511 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:54:01,513 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:54:01,516 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:54:01,519 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:54:01,522 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:54:01,525 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:54:01,527 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:54:01,530 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:54:01,533 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:54:01,535 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:54:01,538 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:54:01,544 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:54:01,547 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:54:01,550 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:54:01,553 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:54:01,555 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:54:02,509 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:54:02,511 [WARNING] django.request: Not Found: /media/0eda9ad64bdc459397402ff142af7e9d
+2022-08-03 11:54:02,512 [WARNING] django.request: Not Found: /media/e9d0f5a77d324c51a3823d04b96a763a
+2022-08-03 11:54:02,514 [WARNING] django.request: Not Found: /media/d9bcf08615874299a6af8fb46a6f6d23
+2022-08-03 11:54:02,515 [WARNING] django.request: Not Found: /media/eb0e643a06a14ae2b00ffb28062c54a8
+2022-08-03 11:54:02,517 [WARNING] django.request: Not Found: /media/2ceb7521e6af4ed68bcbbb8fe79baa7f
+2022-08-03 11:54:02,529 [WARNING] django.request: Not Found: /media/f596d86e284443d69ce421ec760f6c15
+2022-08-03 11:54:02,533 [WARNING] django.request: Not Found: /media/9d2bb7fc1081434d851e8a620bf7fc18
+2022-08-03 11:54:02,536 [WARNING] django.request: Not Found: /media/748681c0a31146c284362425989d531a
+2022-08-03 11:54:02,538 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:54:02,540 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:54:02,541 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:54:02,543 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:54:02,545 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:54:02,547 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:54:02,549 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:54:02,552 [WARNING] django.request: Not Found: /media/
+2022-08-03 11:54:02,554 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:54:02,557 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:54:02,559 [WARNING] django.request: Not Found: /media/5d66be699f564c409089bcd5b2afe885
+2022-08-03 11:54:02,561 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:54:02,564 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:54:02,567 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:54:02,569 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:54:02,572 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:54:02,575 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:54:02,578 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:54:02,582 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:54:02,585 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:54:02,588 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:54:02,592 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:54:02,594 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:54:02,598 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:54:02,601 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:54:02,605 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:54:02,608 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:54:02,611 [WARNING] django.request: Not Found: /media/ec8c45c1ecc14a97a4c015afb87a5173
+2022-08-03 11:54:02,614 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:54:27,518 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2022-08-03 11:54:31,098 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:54:31,105 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:54:31,107 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:54:31,109 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:54:31,111 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:54:31,114 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:54:31,115 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:54:31,117 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:54:31,119 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:54:31,122 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:54:31,127 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:54:31,128 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:54:31,131 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:54:31,133 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:54:31,136 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:54:31,138 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:54:31,141 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:54:31,144 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:54:31,147 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:54:31,151 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:54:31,153 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:54:31,156 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:54:31,159 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:54:31,162 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:54:31,165 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:54:31,167 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:54:31,169 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:56:43,630 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:56:43,636 [WARNING] django.request: Not Found: /media/0eda9ad64bdc459397402ff142af7e9d
+2022-08-03 11:56:43,644 [WARNING] django.request: Not Found: /media/e9d0f5a77d324c51a3823d04b96a763a
+2022-08-03 11:56:43,646 [WARNING] django.request: Not Found: /media/d9bcf08615874299a6af8fb46a6f6d23
+2022-08-03 11:56:43,648 [WARNING] django.request: Not Found: /media/eb0e643a06a14ae2b00ffb28062c54a8
+2022-08-03 11:56:43,649 [WARNING] django.request: Not Found: /media/2ceb7521e6af4ed68bcbbb8fe79baa7f
+2022-08-03 11:56:43,651 [WARNING] django.request: Not Found: /media/f596d86e284443d69ce421ec760f6c15
+2022-08-03 11:56:43,653 [WARNING] django.request: Not Found: /media/9d2bb7fc1081434d851e8a620bf7fc18
+2022-08-03 11:56:43,660 [WARNING] django.request: Not Found: /media/748681c0a31146c284362425989d531a
+2022-08-03 11:56:43,667 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:56:43,669 [WARNING] django.request: Not Found: /media/0eda9ad64bdc459397402ff142af7e9d
+2022-08-03 11:56:43,670 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:56:43,672 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:56:43,675 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:56:43,679 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:56:43,685 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:56:43,690 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:56:43,694 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:56:43,698 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:56:43,703 [WARNING] django.request: Not Found: /media/5d66be699f564c409089bcd5b2afe885
+2022-08-03 11:56:43,706 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:56:43,709 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:56:43,713 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:56:43,716 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:56:43,719 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:56:43,723 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:56:43,726 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:56:43,729 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:56:43,733 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:56:43,736 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:56:43,739 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:56:43,741 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:56:43,744 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:56:43,749 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:56:43,752 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:56:43,755 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:56:43,758 [WARNING] django.request: Not Found: /media/ec8c45c1ecc14a97a4c015afb87a5173
+2022-08-03 11:56:43,761 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:56:43,765 [WARNING] django.request: Not Found: /media/
+2022-08-03 11:56:44,733 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:56:57,456 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:56:57,462 [WARNING] django.request: Not Found: /media/0eda9ad64bdc459397402ff142af7e9d
+2022-08-03 11:56:57,472 [WARNING] django.request: Not Found: /media/e9d0f5a77d324c51a3823d04b96a763a
+2022-08-03 11:56:57,473 [WARNING] django.request: Not Found: /media/d9bcf08615874299a6af8fb46a6f6d23
+2022-08-03 11:56:57,477 [WARNING] django.request: Not Found: /media/eb0e643a06a14ae2b00ffb28062c54a8
+2022-08-03 11:56:57,479 [WARNING] django.request: Not Found: /media/2ceb7521e6af4ed68bcbbb8fe79baa7f
+2022-08-03 11:56:57,480 [WARNING] django.request: Not Found: /media/f596d86e284443d69ce421ec760f6c15
+2022-08-03 11:56:57,482 [WARNING] django.request: Not Found: /media/9d2bb7fc1081434d851e8a620bf7fc18
+2022-08-03 11:56:57,483 [WARNING] django.request: Not Found: /media/748681c0a31146c284362425989d531a
+2022-08-03 11:56:57,484 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:56:57,488 [WARNING] django.request: Not Found: /media/0eda9ad64bdc459397402ff142af7e9d
+2022-08-03 11:56:57,491 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:56:57,495 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:56:57,497 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:56:57,499 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:56:57,503 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:56:57,505 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:56:57,508 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:56:57,511 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:56:57,513 [WARNING] django.request: Not Found: /media/5d66be699f564c409089bcd5b2afe885
+2022-08-03 11:56:57,515 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:56:57,518 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:56:57,520 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:56:57,523 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:56:57,525 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:56:57,529 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:56:57,533 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:56:57,535 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:56:57,538 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:56:57,542 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:56:57,545 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:56:57,548 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:56:57,550 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:56:57,553 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:56:57,556 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:56:57,560 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:56:57,563 [WARNING] django.request: Not Found: /media/ec8c45c1ecc14a97a4c015afb87a5173
+2022-08-03 11:56:57,566 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:57:27,994 [INFO] django.utils.autoreload: C:\dev\project\Jinstagram\config\settings\base.py changed, reloading.
+2022-08-03 11:57:28,914 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2022-08-03 11:57:35,978 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:57:35,984 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:57:35,986 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:57:35,987 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:57:35,990 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:57:35,993 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:57:35,996 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:57:35,998 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:57:36,000 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:57:36,003 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:57:36,006 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:57:36,009 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:57:36,012 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:57:36,015 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:57:36,017 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:57:36,020 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:57:36,023 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:57:36,027 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:57:36,031 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:57:36,033 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:57:36,036 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:57:36,039 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:57:36,042 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:57:36,045 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:57:36,048 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:57:36,051 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:57:36,054 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 11:57:53,054 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2022-08-03 11:57:56,026 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 11:57:56,032 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 11:57:56,035 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 11:57:56,037 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 11:57:56,040 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 11:57:56,042 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 11:57:56,045 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 11:57:56,048 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 11:57:56,049 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 11:57:56,052 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 11:57:56,055 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 11:57:56,059 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 11:57:56,062 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 11:57:56,069 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 11:57:56,072 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 11:57:56,076 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 11:57:56,079 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 11:57:56,084 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 11:57:56,090 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 11:57:56,093 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 11:57:56,096 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 11:57:56,101 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 11:57:56,104 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 11:57:56,107 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 11:57:56,109 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 11:57:56,113 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 11:57:56,116 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 12:31:35,029 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2022-08-03 12:31:37,662 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 12:31:37,678 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 12:31:37,681 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 12:31:37,683 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 12:31:37,686 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 12:31:37,689 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 12:31:37,690 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 12:31:37,692 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 12:31:37,695 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 12:31:37,697 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 12:31:37,700 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 12:31:37,703 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 12:31:37,706 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 12:31:37,709 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 12:31:37,712 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 12:31:37,715 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 12:31:37,717 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 12:31:37,720 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 12:31:37,726 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 12:31:37,730 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 12:31:37,733 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 12:31:37,736 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 12:31:37,740 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 12:31:37,743 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 12:31:37,745 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 12:31:37,749 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 12:31:37,751 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 12:31:47,342 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 12:31:47,346 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 12:31:47,347 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 12:31:47,356 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 12:31:47,358 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 12:31:47,360 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 12:31:47,361 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 12:31:47,363 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 12:31:47,364 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 12:31:47,369 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 12:31:47,371 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 12:31:47,374 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 12:31:47,377 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 12:31:47,380 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 12:31:47,383 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 12:31:47,385 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 12:31:47,388 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 12:31:47,391 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 12:31:47,394 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 12:31:47,397 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 12:31:47,400 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 12:31:47,403 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 12:31:47,407 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 12:31:47,409 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 12:31:47,412 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 12:31:47,414 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 12:31:47,417 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 12:32:55,843 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2022-08-03 12:33:00,404 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 12:33:00,409 [WARNING] django.request: Not Found: /media/67426752b67e4d5ca403ff82fa5e32c0
+2022-08-03 12:33:00,417 [WARNING] django.request: Not Found: /media/5cc06709e65440eb895a3ac879091c8d
+2022-08-03 12:33:00,419 [WARNING] django.request: Not Found: /media/5c1d21ab63d340beb8c911f7f18c7783
+2022-08-03 12:33:00,422 [WARNING] django.request: Not Found: /media/53f0500a8d43406ba10c166a070ed383
+2022-08-03 12:33:00,424 [WARNING] django.request: Not Found: /media/19d7fc7410bf4640a11c858abcadc1e3
+2022-08-03 12:33:00,426 [WARNING] django.request: Not Found: /media/722629bf4f874ff2bf256a70335e5b46
+2022-08-03 12:33:00,429 [WARNING] django.request: Not Found: /media/5869542518b24aedb1328c4090c9df72
+2022-08-03 12:33:00,431 [WARNING] django.request: Not Found: /media/cd6dc71bd9bc4ecea76d40f1f0b8c818
+2022-08-03 12:33:00,434 [WARNING] django.request: Not Found: /media/870595968fee4a56b5cadb840cb2265f
+2022-08-03 12:33:00,437 [WARNING] django.request: Not Found: /media/01a2b3a8c60f4e868b1821ec3ea3b18b
+2022-08-03 12:33:00,439 [WARNING] django.request: Not Found: /media/a53a83c6a209461080b6c473d0bddf43
+2022-08-03 12:33:00,443 [WARNING] django.request: Not Found: /media/7256b2c1e2d7400caea9a3475c851f23
+2022-08-03 12:33:00,445 [WARNING] django.request: Not Found: /media/225225e116cb498f83b80b61905287c2
+2022-08-03 12:33:00,448 [WARNING] django.request: Not Found: /media/752bed60142b47b6a5c8791e075a3782
+2022-08-03 12:33:00,457 [WARNING] django.request: Not Found: /media/d1b91eff2bdf4580b5e382241cb55911
+2022-08-03 12:33:00,461 [WARNING] django.request: Not Found: /media/cac8d7390f89432f90486ae25e950524
+2022-08-03 12:33:00,464 [WARNING] django.request: Not Found: /media/815cd5fd880048d9836428592549d509
+2022-08-03 12:33:00,467 [WARNING] django.request: Not Found: /media/aa0215206c37488abdf5cd3d3fc2566c
+2022-08-03 12:33:00,469 [WARNING] django.request: Not Found: /media/6986d411fd514acea39a523381ed79dd
+2022-08-03 12:33:00,472 [WARNING] django.request: Not Found: /media/56a2a3d4ade04297b3ba308ee113636e
+2022-08-03 12:33:00,474 [WARNING] django.request: Not Found: /media/05be41542a404a73905679d99596ef5f
+2022-08-03 12:33:00,477 [WARNING] django.request: Not Found: /media/18f205cba15743268df74723f615fc63
+2022-08-03 12:33:00,481 [WARNING] django.request: Not Found: /media/27d87ecfc701452dae80e84411c055c1
+2022-08-03 12:33:00,484 [WARNING] django.request: Not Found: /media/f20675639aac480787387b3ce8d6f91a
+2022-08-03 12:33:00,486 [WARNING] django.request: Not Found: /media/aef52077f57b4d35b0b1136e436a2e83
+2022-08-03 12:33:00,489 [WARNING] django.request: Not Found: /media/7ea1ddbe2a8044269518c4b985db0f11
+2022-08-03 12:34:22,399 [WARNING] django.request: Not Found: /static/images/favcon.png
+2022-08-03 12:34:30,288 [WARNING] django.request: Not Found: /m
+2022-08-03 12:36:03,529 [INFO] django.utils.autoreload: C:\dev\project\Jinstagram\config\settings\base.py changed, reloading.
