@@ -16,16 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from content.views import Main, UploadFeed
+from user import views
 from .settings.base import MEDIA_ROOT, MEDIA_URL
 from django.conf.urls.static import static
 import config.views
+
+# from django.contrib.staticfiles.storage import staticfiles_storage
+# from django.views.generic.base import RedirectView
+# from django.conf import settings
 
 urlpatterns = [
     path('', config.views.index, name='index'),
     path('admin/', admin.site.urls),
     path('main/', Main.as_view()),
     path('content/', include('content.urls')),
-    path('user/', include('user.urls'))
+    path('user/', include('user.urls')),
+    # path('favicon.ico', RedirectView.as_view(
+    #     url=staticfiles_storage.url("favicon.ico"))),
 ]
 
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
