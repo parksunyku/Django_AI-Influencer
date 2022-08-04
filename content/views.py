@@ -159,42 +159,42 @@ class ToggleBookmark(APIView):
 
 
 class FeedControl(APIView):
-    def upload(self, request):
-        file = request.FILES['file']
-        uuid_name = uuid4().hex
-        save_path = os.path.join(MEDIA_ROOT, uuid_name)
-        with open(save_path, 'wb+') as destination:
-            for chunk in file.chunks():
-                destination.write(chunk)
+    # def upload(self, request):
+    #     file = request.FILES['file']
+    #     uuid_name = uuid4().hex
+    #     save_path = os.path.join(MEDIA_ROOT, uuid_name)
+    #     with open(save_path, 'wb+') as destination:
+    #         for chunk in file.chunks():
+    #             destination.write(chunk)
 
-        image = uuid_name
-        content = request.data.get('content')
-        email = request.session.get('email', None)
+    #     image = uuid_name
+    #     content = request.data.get('content')
+    #     email = request.session.get('email', None)
 
-        Feed.objects.create(image=image, content=content,
-                            email=email)
+    #     Feed.objects.create(image=image, content=content,
+    #                         email=email)
 
-    def like(self, request):
-        feed_id = request.data.get('feed_id', None)
-        favorite_text = request.data.get('favorite_text', True)
+    # def like(self, request):
+    #     feed_id = request.data.get('feed_id', None)
+    #     favorite_text = request.data.get('favorite_text', True)
 
-        if favorite_text == 'favorite_border':
-            is_like = True
-        else:
-            is_like = False
+    #     if favorite_text == 'favorite_border':
+    #         is_like = True
+    #     else:
+    #         is_like = False
 
-        email = request.session.get('email', None)
+    #     email = request.session.get('email', None)
 
-        like = Like.objects.filter(feed_id=feed_id, email=email).first()
+    #     like = Like.objects.filter(feed_id=feed_id, email=email).first()
 
-        if like:
-            like.is_like = is_like
-            like.save()
-        else:
-            Like.objects.create(
-                feed_id=feed_id, is_like=is_like, email=email)
+    #     if like:
+    #         like.is_like = is_like
+    #         like.save()
+    #     else:
+    #         Like.objects.create(
+    #             feed_id=feed_id, is_like=is_like, email=email)
 
-        return Response(status=200)
+    #     return Response(status=200)
 
     def delete(self, request):
         if request.data.get('target', None) == 'feed':
@@ -208,25 +208,25 @@ class FeedControl(APIView):
             Reply.objects.filter(id=id).delete()
             return Response(status=200)
 
-    def toggleBookmark(self, request):
-        feed_id = request.data.get('feed_id', None)
-        bookmark_text = request.data.get('bookmark_text', True)
+    # def toggleBookmark(self, request):
+    #     feed_id = request.data.get('feed_id', None)
+    #     bookmark_text = request.data.get('bookmark_text', True)
 
-        if bookmark_text == 'bookmark_border':
-            is_marked = True
-        else:
-            is_marked = False
+    #     if bookmark_text == 'bookmark_border':
+    #         is_marked = True
+    #     else:
+    #         is_marked = False
 
-        email = request.session.get('email', None)
+    #     email = request.session.get('email', None)
 
-        bookmark = Bookmark.objects.filter(
-            feed_id=feed_id, email=email).first()
+    #     bookmark = Bookmark.objects.filter(
+    #         feed_id=feed_id, email=email).first()
 
-        if bookmark:
-            bookmark.is_marked = is_marked
-            bookmark.save()
-        else:
-            Bookmark.objects.create(
-                feed_id=feed_id, is_marked=is_marked, email=email)
+    #     if bookmark:
+    #         bookmark.is_marked = is_marked
+    #         bookmark.save()
+    #     else:
+    #         Bookmark.objects.create(
+    #             feed_id=feed_id, is_marked=is_marked, email=email)
 
-        return Response(status=200)
+    #     return Response(status=200)
