@@ -150,8 +150,8 @@ header p {
 
 .logo {
     position: absolute;
-    top: 0;
-    left: 63%;
+    top: -6px;
+    left: 64%;
     transform: translateX(-50%);
 }
 
