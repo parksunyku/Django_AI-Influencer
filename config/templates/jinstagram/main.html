@@ -41,7 +41,7 @@
 
   .right_body {
     padding-top: 20px;
-    width: 300px;
+    width: 350px;
     height: 1000px;
     left: 72%;
     position: fixed
@@ -255,7 +255,7 @@
     style="width: 100%; height: 50px; position: fixed; z-index: 999;">
 
     <div class="container-fluid" style="justify-content: space-between; flex-wrap: nowrap; min-width: 1000px;">
-      <a class="navbar-brand" href="/main">
+      <a class="navbar-brand" href="/">
         <img style="height: 30px; object-fit: contain" src="{% static './images/favcon.png' %}"><span
           style="color :purple; font-weight: bold;"> AINF
         </span></a>
@@ -273,7 +273,7 @@
         <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">explore</span>
         <span class="material-icons-outlined" style="padding-right: 10px; cursor: pointer;">favorite_border</span>
 
-        {% if user is None %}
+        {% if user == None %}
         <a href="/user/login" style="color : black" ;><span class="material-icons"
             style="padding-right: 10px">login</span></a>
         {% else %}
@@ -325,14 +325,14 @@
         <div class="feed_icon">
           <div>
             <span id="favorite_{{ feed.id }}" feed_id="{{ feed.id }}" class="favorite material-icons-outlined"
-              style="color: red; cursor: pointer;">{% if feed.is_liked %}
+              user="{{ user }}" style="color: red; cursor: pointer;">{% if feed.is_liked %}
               favorite{% else %}favorite_border{% endif %}</span>
             <span class="material-icons-outlined" style="cursor: pointer;">mode_comment</span>
             <span class="material-icons-outlined" style="cursor: pointer;">send</span>
           </div>
           <div>
-            <span id="bookmark_{{feed.id }}" feed_id=" {{ feed.id }}" class="bookmark material-icons-outlined"
-              style="cursor: pointer;">
+            <span id="bookmark_{{feed.id }}" feed_id=" {{ feed.id }}" user="{{ user }}"
+              class="bookmark material-icons-outlined" style="cursor: pointer;">
               {% if feed.is_marked %}
               bookmark
               {% else %}
@@ -363,7 +363,7 @@
           <span style="padding-left: 10px;" class="material-icons-outlined">sentiment_satisfied</span>
           <input feed_id="{{ feed.id }}" id="reply_{{ feed.id }}" type="text" class="form-control"
             style="box-shadow : none; border: none; outline: none;" placeholder="댓글 달기..">
-          <div feed_id="{{ feed.id }}" id="reply_Btn" class="upload_reply"
+          <div feed_id="{{ feed.id }}" id="reply_Btn" class="upload_reply" user="{{ user }}"
             style="width: 50px; color: cornflowerblue; font-weight: bold; cursor: pointer;">
             게시
           </div>
@@ -374,6 +374,7 @@
     <!-- 여기까지 피드박스-->
 
     <div class="right_body">
+      {% if user != None %}
       <div class="feed_name" style="justify-content: space-between">
         <div style="display: flex; align-items: center; ">
           <div class="big_profile_box">
@@ -385,9 +386,9 @@
           </div>
         </div><a href="/content/profile/{{ user.nickname }}" class="link_txt">전환</a>
       </div>
-
+      {% endif %}
       <div class="recommend_box">
-        <span style="color: gray"> 회원님을 위한 추천</span>
+        <span style="color: gray"> 당신을 위한 추천</span>
         <a href="#" style="color:black; text-decoration : none;"><span style="font-weight: bold; font-size: 13px">모두
             보기</span></a>
       </div>
@@ -395,15 +396,14 @@
       <div>
         <div class="feed_name" style="justify-content: space-between">
           <div class="profile_box">
-            <img class="profile_img"
-              src="https://blog.kakaocdn.net/dn/A9USk/btrkun9XSGS/3C3d1M7YCJmB9ATXRd0VqK/img.png">
+            <img class="profile_img" src="/static/images/-002.png">
           </div>
           <div class="name_content">
-            <span class="feed_name_txt"> user 03 </span>
-            <span class="name_content_txt"> Jinstargram 신규가입</span>
+            <span class="feed_name_txt"> meow </span>
+            <span class="name_content_txt"> 가상인플루언서 meow </span>
           </div>
-          <a class="link_txt">
-            팔로우
+          <a class="link_txt" href="/content/profile/meow">
+            구경하기
           </a>
         </div>
 
@@ -412,64 +412,67 @@
             <img class="profile_img" src="https://img.hankyung.com/photo/202207/03.30094768.1.jpg">
           </div>
           <div class="name_content">
-            <span class="feed_name_txt"> user 04 </span>
-            <span class="name_content_txt"> IU 외 5명이 팔로우</span>
+            <span class="feed_name_txt"> 박은빈 </span>
+            <span class="name_content_txt"> eunbining0904</span>
           </div>
-          <a class="link_txt">
-            팔로우
-          </a>
-        </div>
-
-        <div class="feed_name" style="justify-content: space-between">
-          <div class="profile_box">
-            <img class="profile_img" src="https://images.khan.co.kr/article/2022/06/15/l_2022061502000841200158621.jpg">
-          </div>
-          <div class="name_content">
-            <span class="feed_name_txt"> user 05 </span>
-            <span class="name_content_txt"> IU 외 5명이 팔로우</span>
-          </div>
-          <a class="link_txt">
-            팔로우
-          </a>
-        </div>
-
-        <div class="feed_name" style="justify-content: space-between">
-          <div class="profile_box">
-            <img class="profile_img" src="https://www.yeongnam.com/mnt/file/202006/2020062501000894500036841.jpg">
-          </div>
-          <div class="name_content">
-            <span class="feed_name_txt"> user 06 </span>
-            <span class="name_content_txt"> 그냥 추천해봄 </span>
-          </div>
-          <a class="link_txt">
-            팔로우
+          <a class="link_txt" href="https://www.instagram.com/eunbining0904/">
+            구경하기
           </a>
         </div>
 
         <div class="feed_name" style="justify-content: space-between">
           <div class="profile_box">
             <img class="profile_img"
-              src="https://w.namu.la/s/639457812204108a84bcc8edf78b5ccfd1c9f4afbe42b6412b7bcedabb751d93d849b49eec93ede31c1f7d0f767047761c54a5fd05e882eb3d99c3aebdc13806413eb6fda3f18668b62258af9a3a2f42ced07eb38a1d209204ae19ec0d962cdf87fb7d04ab0c8efb8c0940aa072eef90">
+              src="http://file3.instiz.net/data/file3/2022/05/01/d/5/2/d528e82fdffcb6c70fb087d83587e167.jpg">
           </div>
           <div class="name_content">
-            <span class="feed_name_txt"> user 07 </span>
-            <span class="name_content_txt"> 애도 유명해 </span>
+            <span class="feed_name_txt"> 김하늘 </span>
+            <span class="name_content_txt"> haneul_jin</span>
           </div>
-          <a class="link_txt">
-            팔로우
+          <a class="link_txt" href="https://www.instagram.com/haneul_jin/">
+            구경하기
+          </a>
+        </div>
+
+        <div class="feed_name" style="justify-content: space-between">
+          <div class="profile_box">
+            <img class="profile_img" src="/static/images/261143_20210325180240_500.jpg">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> 아이유 </span>
+            <span class="name_content_txt"> dlwlrma</span>
+          </div>
+          <a class="link_txt" href="https://www.instagram.com/dlwlrma/">
+            구경하기
+          </a>
+        </div>
+
+        <div class="feed_name" style="justify-content: space-between">
+          <div class="profile_box">
+            <img class="profile_img" src="/static/images/kimtaeri.jpg">
+          </div>
+          <div class="name_content">
+            <span class="feed_name_txt"> 김태리 </span>
+            <span class="name_content_txt">
+              kimtaeri_official </span>
+          </div>
+          <a class="link_txt" href="https://www.instagram.com/kimtaeri_official/">
+            구경하기
           </a>
         </div>
       </div>
 
       <div class="comment_box">
-        <span> 인스타그램 클론 코딩 </span>
-        <span> www.example.com </span>
+        <span> AI 인플루언서 전시 채널 </span>
+        <span> www.ainf.site </span>
         <br>
-        <span> @2022 INSTAGRAM FROM FACEBOOK </span>
+        <span> COPYRIGHT : 김덕휘 김무준 김태호 박선규</span>
       </div>
 
     </div>
   </div>
+
+
   {% if user != None %}
   <!-- 첫번째 모달-->
   <div id="first_modal" class="modal modal_overlay">
@@ -524,37 +527,63 @@
   <script>
 
     $(".bookmark").click(function (event) {
-      let feed_id = event.target.attributes.getNamedItem('feed_id').value;
-      let bookmark_id = event.target.id;
-      let bookmark_text = $.trim($('#' + bookmark_id).html());
-      if (bookmark_text == 'bookmark') {
-        $('#' + bookmark_id).html('bookmark_border');
-      } else {
-        $('#' + bookmark_id).html('bookmark');
-      }
+      console.log("bookmark")
 
-      $.ajax({
-        url: "/content/bookmark",
-        data: {
-          feed_id: feed_id,
-          bookmark_text: bookmark_text
-        },
-        method: "POST",
-        success: function (data) {
-          console.log("성공");
-        },
-        error: function (request, status, error) {
-          console.log("에러");
-        },
-        complete: function () {
-          console.log("완료");
+      user = event.target.attributes.getNamedItem('user').value;
+      console.log(user)
+
+      if (user == 'None') {
+        flag = confirm("로그인 하시겠습니까?")
+        if (flag) {
+          location.replace('/user/login')
         }
-      });
+      } else {
+
+        let feed_id = event.target.attributes.getNamedItem('feed_id').value;
+        let bookmark_id = event.target.id;
+        let bookmark_text = $.trim($('#' + bookmark_id).html());
+        if (bookmark_text == 'bookmark') {
+          $('#' + bookmark_id).html('bookmark_border');
+        } else {
+          $('#' + bookmark_id).html('bookmark');
+        }
+
+        $.ajax({
+          url: "/content/bookmark",
+          data: {
+            feed_id: feed_id,
+            bookmark_text: bookmark_text
+          },
+          method: "POST",
+          success: function (data) {
+            console.log("성공");
+          },
+          error: function (request, status, error) {
+            console.log("에러");
+          },
+          complete: function () {
+            console.log("완료");
+          }
+        });
+      }
     });
 
 
 
     $(".favorite").click(function (event) {
+
+      user = event.target.attributes.getNamedItem('user').value;
+      console.log(user)
+
+      if (user == 'None') {
+        flag = confirm("로그인 하시겠습니까?")
+        if (flag) {
+          location.replace('/user/login')
+        }
+      } else {
+        replyCheck();
+      }
+
       let feed_id = event.target.attributes.getNamedItem('feed_id').value;
       let favorite_id = event.target.id;
       console.log(favorite_id);
@@ -595,7 +624,17 @@
 
 
     $(".upload_reply").click(function (event) {
-      replyCheck();
+      user = event.target.attributes.getNamedItem('user').value;
+      console.log(user)
+
+      if (user == 'None') {
+        flag = confirm("로그인 하시겠습니까?")
+        if (flag) {
+          location.replace('/user/login')
+        }
+      } else {
+        replyCheck();
+      }
     });
 
     function replyCheck() {
